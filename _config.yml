@@ -1,6 +1,6 @@
-name: Your New Jekyll Site
-description: Blogging about stuffs
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
+name: 邹小创 个人博客
+description: '关于生活和技术'
+meta_description: "邹小创个人博客 关于生活和技术"
 
 markdown: redcarpet
 highlighter: pygments
