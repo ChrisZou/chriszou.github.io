@@ -5,9 +5,7 @@ date:   2015-05-24 18:21
 categories: regular expression, ruby  
 comments: true  
 tags: [regex, ruby]
-excerpt_separator: <!--more-->  
 ---  
-
 Regular expressions are nuts. You spent lots of time studying them and later when you need to write one, you came up with nothing. That’s why you need a cheatsheet, like this one.  
 
 ## Abbreviations used in this post  
