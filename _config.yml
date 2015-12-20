@@ -1,6 +1,6 @@
-name: 邹小创 个人博客
-description: '关于生活和技术'
-meta_description: "邹小创个人博客 关于生活和技术"
+name: 邹小创
+description: '关于技术和生活'
+meta_description: "邹小创 关于技术和生活"
 
 markdown: redcarpet
 highlighter: pygments
