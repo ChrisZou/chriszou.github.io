@@ -7,6 +7,10 @@ highlighter: pygments
 logo: false
 paginate: 15
 baseurl: /
-domain_name: 'http://yourblog-domain.com'
+domain_name: 'http://chriszou.com'
+
+# Details for the RSS feed generator
+url:            'http://chriszou.com'
+author:         '邹小创'
 
 gems: [jekyll-paginate]
