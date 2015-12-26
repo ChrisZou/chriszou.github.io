@@ -7,7 +7,7 @@ comments: true
 昨天上午在星巴克coding，大约11点的时候旁边坐来一个很高大的美国人，叫Robert，来自于美国。。。出生在Texas，在Pennsylvania长大，在Arizona工作了7年，所以好像和很难说来自于哪个州。刚开始安安静静的坐了会，然后他看见我在coding，问”Are you making an app?”, 我说yes，然后就开始聊起来了，聊了大概2个小时，让我了解到一些比较惊讶，或者说之前不知道的事情。
 
 ## 1. Android & Apple
-在国内，对于绝大部分人来说，买Android机的最主要原因，应该是便宜吧？然而他告诉我，在美国并不是这样的，Android在美国是非常流行的，几乎75%是安卓，iPhone不到25%，为什么呢？因为Google，因为Google Maps，因为GMail，Youtube，Google Drive，Handout。。。Google在美国已经建立了非常庞大而完善的生态圈。而在这基础之下，是Google的 constant updates----这才是Google最大的特点，或者说最大的优势----这些updates保证了系统的流畅性，保证了APP极好的使用体验。此外，Google Play 的统一性保证了手机上的第三方app也能持续的得到更新。所以国外的安卓机远不像国内的系统那么卡，app体验那么差。然而这一切，在我大天朝的GFuckingW下面封锁的荡然无存，所以中国的Android机才这么慢，这么卡。这让我意识到，中国这么多人想买iPhone，甚至卖肾买iPhone，其实真不是我们多么虚荣，也不是iPhone真的有那么好，只是因为Android或者说Google的绝大块优势都已经被剥夺了，在这种情况下，我们并没有第二种选择。
+在国内，除了我们苦逼的安卓开发者，对于绝大部分人来说，买Android机的最主要原因，应该是便宜吧？然而他告诉我，在美国并不是这样的，Android在美国是非常流行的，几乎75%是安卓，iPhone不到25%，为什么呢？因为Google，因为Google Maps，因为GMail，Youtube，Google Drive，Handout。。。Google在美国已经建立了非常庞大而完善的生态圈。而在这基础之下，是Google的 constant updates----这才是Google最大的特点，或者说最大的优势----这些updates保证了系统的流畅性，保证了APP极好的使用体验。此外，Google Play 的统一性保证了手机上的第三方app也能持续的得到更新。所以国外的安卓机远不像国内的系统那么卡，app体验那么差。然而这一切，在我大天朝的GFuckingW下面封锁的荡然无存，所以中国的Android机才这么慢，这么卡。这让我意识到，中国这么多人想买iPhone，甚至卖肾买iPhone，其实真不是我们多么虚荣，也不是iPhone真的有那么好，只是因为Android或者说Google的绝大块优势都已经被剥夺了，在这种情况下，我们并没有第二种选择。
 恩，以后谁再跟我说他的安卓机很卡很慢，我知道该怎么回应了！
 
 ## 2. 该重视的是用户体验
