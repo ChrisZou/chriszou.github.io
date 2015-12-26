@@ -95,5 +95,5 @@ server {
 If you only want to server your app in development environment, you don't need this step.
 
 ### Start unicorn in production
-`bundle exec unicorn -c config/unicorn.rb -D -E production`
+`bundle exec unicorn -c config/unicorn.rb -D -E production`  
 If you want to run in development mode, just remove the `-E production`. If you don't want to run in deamon, just remove the `-D`.
