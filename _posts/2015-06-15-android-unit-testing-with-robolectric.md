@@ -27,10 +27,11 @@ Martin Fowler在《重构》里面还解释了为什么单元测试可以节省�
 
 ```Java
 public class Test {
-	public static void main(String[] argv) { 		testMethod();
+	public static void main(String[] argv) { 		
+        testMethod();
 	}
 	public static void testMethod() {
-		throw RuntimeException("stub!!”);
+		throw RuntimeException("stub!!");
 	}
 }
 ```
