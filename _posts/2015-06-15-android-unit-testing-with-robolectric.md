@@ -17,12 +17,12 @@ comments: 'duoshuo'
 是的，你没看错，他说单元测试可以节约时间，提高开发速度！！！身为一个无可救药的懒癌患者，看了这句话简直就像看到了一道神光似的！既然都可以节省时间，那肯定是要看看的啊！    
 有趣的是，Martin Fowler在《重构》里面说他最初是因为 Dave Thomas说的一句话，让他走上了单元测试的不归路。而我这几天刚好又在看Dave Thomas写的《Programming Ruby 1.9 & 2.0》。。。。。。写到这里顿时觉得自己很不要脸。。。。。。    
 Martin Fowler在《重构》里面还解释了为什么单元测试可以节省时间，大意是我们写程序的时候，其实大部分时间不是花在写代码上面，而是花在debug上面，是花在找出问题到底出在哪上面，而单元测试可以最快的发现你的新代码哪里不work，这样你就可以很快的定位到问题所在，然后给以及时的解决，这也可以在很大程度上防止regression（相信QE和QA们一定很喜欢哈哈。。。），这也是个大部分程序员和测试都很痛恨的问题。    
-之后不久，就开始花了点时间了解了一下Android里面怎么做unit testing，结果却发现那是个非常难办的事情。。。<!--more-->    
+之后不久，就开始花了点时间了解了一下Android里面怎么做unit testing，结果却发现那是个非常难办的事情。。。
 
 ### 为什么android unit testing不好做    
 我们知道安卓的app需要运行在delvik上面，我们开发Android app是在JVM上面，在开发之前我们需要下载各个API-level的SDK的，下载的每个SDK都有一个android.jar的包，这些可以在你的*android_sdk_home*/platforms/下面看到。当我们开发一个项目的时候，我们需要指定一个API-level，其实就是将对应的android.jar 加到这个项目的build path里面去。这样我们的项目就可以编译打包了。然而现在的问题是，我们的代码必须**运行**在emulator或者是device上面，说白了，就是我们的IDE和SDK只提供了开发和编译一个项目的环境，并没有提供运行这个项目的环境，原因是因为android.jar里面的class实现是不完整的，它们只是一些stub，如果你打开android.jar下面的代码去看看，你会发现所有的方法都只有一行实现：    
-`throw RuntimeException("stub!!”);`    
-而运行unit test，说白了还是个运行的过程，所以如果你的unit test代码里面有android相关的代码的话，那运行的时候将会抛出RuntimeException("stub!!”)。为了解决这个问题，现在业界提出了很多不同的程序架构，比如MVP、MVVM等等，这些架构的优势之一，就是将其中一层抽出来，变成pure Java实现，这样做unit testing就不会遇到上面这个问题了，因为其中没有android相关的代码。    
+`throw RuntimeException("stub!!");`    
+而运行unit test，说白了还是个运行的过程，所以如果你的unit test代码里面有android相关的代码的话，那运行的时候将会抛出RuntimeException("stub!!")。为了解决这个问题，现在业界提出了很多不同的程序架构，比如MVP、MVVM等等，这些架构的优势之一，就是将其中一层抽出来，变成pure Java实现，这样做unit testing就不会遇到上面这个问题了，因为其中没有android相关的代码。    
 好奇的童鞋可能会问了，既然android.jar的实现是不完整的，那为什么我们可以编译这个项目呢？那是因为编译代码的过程并没有真正的运行这些代码，它只会检查你的接口有没有定义，以及其他的一些语法是不是正确。举个简单的例子：  
 
 ```Java
@@ -35,7 +35,7 @@ public class Test {
 	}
 }
 ```
-上面的代码你同样可以编译通过，但你运行的时候，就会抛出异常`RuntimeException("stub!!”)`。当我们的项目运行在emulator或者是device上面的时候，android.jar被替换成了emulator或者是device上面的系统的实现，那上面的实现是真正实现了那些方法的，所以运行起来没有问题。  
+上面的代码你同样可以编译通过，但你运行的时候，就会抛出异常`RuntimeException("stub!!")`。当我们的项目运行在emulator或者是device上面的时候，android.jar被替换成了emulator或者是device上面的系统的实现，那上面的实现是真正实现了那些方法的，所以运行起来没有问题。  
 话说回来，MVP、MVVM这些架构模式虽然解决了部分问题，可以测试项目中不含android相关的类的代码，然而一个项目中还是有很大部分是android相关的代码的，所以上面那种解决方案，其实是放弃了其中一大块代码的unit test。    
 当然，话说回来，android还是提供了他自己的testing framework，叫instrumentation，但是这套框架还是绕不开刚刚提到的问题，他们必须跑在emulator或者是device上面。这是个很慢的过程，因为要打包、dexing、上传到机器、运行起来界面。。。这个相信大家都有体会，尤其是项目大了以后，运行一次甚至需要一两分钟，项目小的话至少也要十几秒或几十秒。以这个速度是没有办法做unit test的。    
 那么怎么样即可以给android相关的代码做测试，又可以很快的运行这些测试呢？    
@@ -49,10 +49,12 @@ public class Test {
 下面简单的介绍一下使用Robolectric来做unit testing。注意：下面的配置方法指的是AndroidStudio上面的，Eclipse用户自行google一下配制方法。  
 要使用Robolectric，需要做几步配置工作。  
 1. 首先需要将它和JUnit4加到你项目的dependencies里面，  
+
 ```  
 testCompile 'junit:junit:4.12'  
 testCompile ’org.robolectric:robolectric:3.0-rc3’  
 ```  
+
 其中的Robolectric的最新版本号可能会变，具体可以上[jcenter](https://bintray.com/bintray/jcenter)查看一下当前的最新版本号。  
 2. 将`Build Variant`里面的`Test Artifact`选择为Unit Test，如果你找不到`Build Variant`，可以在菜单栏选择`View -> Tool Windows -> Build Variant`. 正常情况下它会出现在左下角。  
 3. 如果是Mac的话，还需要配置一个东西，菜单栏选择 `Run -> Edit Configuration -> Defaults -> JUnit`，在Configuration tab将working directory改成`$MODULE_DIR$`。这个配置是Robolectric[官方文档](http://robolectric.org/getting-started/)提到的，但我用最新的AndroidStudio1.3实验的时候，忘了配置这个，貌似也可以正确运行，anyway，配置一下也无所谓。具体见Robolectric的[官方文档](http://robolectric.org/getting-started/)，最下面那部分。  
