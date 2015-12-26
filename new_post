@@ -25,3 +25,5 @@ comments: true
 File.open(path, 'w') do |f|
     f.write(header_content)
 end
+
+`atom #{path}`
