@@ -6,33 +6,43 @@
 
     <title>{{ site.name }} - {{ page.title || site.description }}</title>
     <meta name="description" content="{{ site.meta_description}}" />
-
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.useso.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
-    <!-- Customisation  -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 
+    <style>
+    .post {
+      position: relative;
+      width: 80%;
+      max-width: 710px;
+      margin: 4rem auto;
+      padding-bottom: 4rem;
+      border-bottom: #EBF2F6 1px solid;
+      word-break: break-word;
+      hyphens: auto;
+    }
+    </style>
 </head>
 <body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
 
     {{ content }}
     <footer class="site-footer clearfix">
       <section class="copyright">
-        <a href="{{ site.baseurl }}">{{ site.name }}</a> &copy; 
+        <a href="{{ site.baseurl }}">{{ site.name }}</a> &copy;
               {{date format="YYYY"}} &bull; All rights reserved.
       </section>
-      <section class="poweredby">Made with Jekyll using 
+      <section class="poweredby">Made with Jekyll using
         <a href="http://github.com/rosario/kasper">Kasper theme</a>
       </section>
     </footer>
-    
+
     <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="/assets/js/index.js"></script>
 </body>
 </html>
+<link rel="stylesheet" type="text/css" href="//fonts.useso.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
