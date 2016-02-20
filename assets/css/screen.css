@@ -903,7 +903,7 @@ body:not(.post-template) .post-title {
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 6rem 0 0 0;
+    margin: 7rem 0 0 0;
     padding: 6rem 0 0 0;
     border-top: #EBF2F6 1px solid;
 }
@@ -1114,14 +1114,14 @@ body:not(.post-template) .post-title {
     box-sizing: border-box;
     display: block;
     position: absolute;
-    top: -40px;
+    top: -60px;
     left: 50%;
-    margin-left: -40px;
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
+    margin-left: -60px;
+    width: 120px;
+    height: 120px;
+    /*border-radius: 100%;*/
     overflow: hidden;
-    padding: 6px;
+    /*padding: 6px;*/
     background: #fff;
     z-index: 2;
     box-shadow: #E7EEF2 0 0 0 1px;
@@ -1134,7 +1134,7 @@ body:not(.post-template) .post-title {
     height: 100%;
     background-size: cover;
     background-position: center center;
-    border-radius: 100%;
+    /*border-radius: 100%;*/
 }
 
 .author-profile .author-image {
