@@ -69,11 +69,11 @@ comments: true
                 </figure>
                 <section class="author">
                     <!-- Author Name -->
-                    <h4> {{ site.author }} </h4>
+                    <!-- <h4> {{ site.author }} </h4> -->
                     <!-- Author Bio -->
                     <p>
-                        阅读作者的 <a href="http://chriszou.com/">更多文章</a><br>
-                        联系我:
+                        <a href="http://chriszou.com/">更多文章</a><br>
+                        <!-- 联系我: -->
                         <a href="https://github.com/ChrisZou/">Github</a>
                         <a href="http://weibo.com/happystriving">微博</a>
                         <a href="happystriving@126.com">邮件</a>
@@ -82,7 +82,9 @@ comments: true
             {% endif %}
 
             <!-- Share links section -->
-            {% include share.html %}
+            {% if site.enable_sharing %}
+              {% include share.html %}
+            {% endif %}
 
             <!-- Changyan comments -->
             {% if page.comments %}

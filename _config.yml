@@ -8,6 +8,7 @@ logo: false
 paginate: 15
 baseurl: /
 domain_name: 'http://chriszou.com'
+enable_sharing: false
 
 # Details for the RSS feed generator
 url:            'http://chriszou.com'
