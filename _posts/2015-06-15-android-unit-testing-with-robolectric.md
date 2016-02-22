@@ -130,7 +130,7 @@ BUILD SUCCESSFUL
 Total time: 12.884 secs
 ```  
 
-在我的机器上（MacBook Air 2013款，8G内存，算比较低的配置），运行这个test只需要不到12秒钟，或许没有达到普通JUnit的秒级速度，然而相对于用Instrumentation来说已经是极大的提升了。
+在我的机器上（MacBook Air 2013款，8G内存，算比较低的配置），运行这个test只需要不到12秒钟，如果直接在AndroidStudio里面运行的话，这个速度会更快，一般可以再10秒之内完成，或许没有达到普通JUnit的秒级速度，然而相对于用Instrumentation来说已经是极大的提升了。
 注：第一次运行可能需要下载一些library，或者是gradle本身，可能需要花一点时间，这个跟unit test本身没关。  
 整个项目已经放到github上面：[robolectric-demo](https://github.com/ChrisZou/robolectric-demo)  
 
