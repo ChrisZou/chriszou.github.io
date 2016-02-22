@@ -3,11 +3,11 @@ layout: post
 title: 用Robolectric来做Android unit testing      
 tags: [tech, java, android, testing]
 date: 2015-06-15T05:52:42+08:00
-comments: 'duoshuo'
+comments: true
 ---
 
 作为一只本科非计算机专业的程序猿，手动写单元测试是我从来没接触过的东西，甚至在几个月前，我都不知道单元测试是什么东西。倒不是说没听过这个词，也不是不知道它的大概是什么东西——“用来测试一个方法，或者是一小块代码的测试代码”。然而真正是怎么做的？我并没有一个概念，或者说并没有一个感觉。    
-记得第一份工作在创新工场的时候，听当时的boss @王明礼 说，公司有个神级的程序员（。。。名字忘了。。。），他会写大量的单元测试，甚至达到50%。当时崇拜之极，却仍然觉得写单元测试是很麻烦的一件事情。    
+记得第一份工作在创新工场的时候，听当时的boss @王明礼 说，公司有个神级的程序员（。。。名字忘了。。。），他会写大量的单元测试，甚至50%以上的代码都是单元测试。当时崇拜之极，却仍然觉得写单元测试是很麻烦的一件事情。   
 
 扯远了，话说回来，当你接触多了国外的技术博客，视频之后，你会发现，单元测试甚至TDD，在国外是非常流行的事情。很多人甚至说离开了单元测试，他们便没有办法写代码。这些都让我对单元测试的好感度逐渐的上升。然而，真正让我下定决心，一定要研究一下这个东西的，是前段时间看大名鼎鼎的《重构：改善现有代码的艺术》里面的一段话：    
 
@@ -15,9 +15,9 @@ comments: 'duoshuo'
 > --Martin Fowler 《Refactoring: Improving the Design of Existing Code》    
 
 是的，你没看错，他说单元测试可以节约时间，提高开发速度！！！身为一个无可救药的懒癌患者，看了这句话简直就像看到了一道神光似的！既然都可以节省时间，那肯定是要看看的啊！    
-有趣的是，Martin Fowler在《重构》里面说他最初是因为 Dave Thomas说的一句话，让他走上了单元测试的不归路。而我这几天刚好又在看Dave Thomas写的《Programming Ruby 1.9 & 2.0》。。。。。。写到这里顿时觉得自己很不要脸。。。。。。    
+有趣的是，Martin Fowler在《重构》里面说他最初是因为 Dave Thomas说的一句话，让他走上了单元测试的不归路。而我这几天刚好又在看Dave Thomas写的《Programming Ruby 1.9 & 2.0》，也算是个巧合啊！  
 Martin Fowler在《重构》里面还解释了为什么单元测试可以节省时间，大意是我们写程序的时候，其实大部分时间不是花在写代码上面，而是花在debug上面，是花在找出问题到底出在哪上面，而单元测试可以最快的发现你的新代码哪里不work，这样你就可以很快的定位到问题所在，然后给以及时的解决，这也可以在很大程度上防止regression（相信QE和QA们一定很喜欢哈哈。。。），这也是个大部分程序员和测试都很痛恨的问题。    
-之后不久，就开始花了点时间了解了一下Android里面怎么做unit testing，结果却发现那是个非常难办的事情。。。
+之后不久，就开始花了点时间了解了一下Android里面怎么做unit testing，结果却发现那是个非常难办的事情。。。  
 
 ### 为什么android unit testing不好做    
 我们知道安卓的app需要运行在delvik上面，我们开发Android app是在JVM上面，在开发之前我们需要下载各个API-level的SDK的，下载的每个SDK都有一个android.jar的包，这些可以在你的*android_sdk_home*/platforms/下面看到。当我们开发一个项目的时候，我们需要指定一个API-level，其实就是将对应的android.jar 加到这个项目的build path里面去。这样我们的项目就可以编译打包了。然而现在的问题是，我们的代码必须**运行**在emulator或者是device上面，说白了，就是我们的IDE和SDK只提供了开发和编译一个项目的环境，并没有提供运行这个项目的环境，原因是因为android.jar里面的class实现是不完整的，它们只是一些stub，如果你打开android.jar下面的代码去看看，你会发现所有的方法都只有一行实现：    
@@ -113,22 +113,24 @@ public class MainActivityTest {
 
 ```  
 ...  
-:app:preCompileReleaseUnitTestJava  
-:app:preReleaseUnitTestBuild UP-TO-DATE  
-:app:prepareReleaseUnitTestDependencies  
-:app:processReleaseUnitTestJavaRes UP-TO-DATE  
-:app:compileReleaseUnitTestJava UP-TO-DATE  
-:app:compileReleaseUnitTestSources UP-TO-DATE  
-:app:assembleReleaseUnitTest UP-TO-DATE  
-:app:testRelease UP-TO-DATE  
-:app:test UP-TO-DATE  
+:app:processDebugJavaRes UP-TO-DATE
+:app:compileDebugJava UP-TO-DATE
+:app:preCompileDebugUnitTestJava
+:app:preDebugUnitTestBuild UP-TO-DATE
+:app:prepareDebugUnitTestDependencies
+:app:processDebugUnitTestJavaRes UP-TO-DATE
+:app:compileDebugUnitTestJava
+:app:compileDebugUnitTestSources
+:app:mockableAndroidJar UP-TO-DATE
+:app:assembleDebugUnitTest
+:app:testDebug
 
-BUILD SUCCESSFUL  
+BUILD SUCCESSFUL
 
-Total time: 1.45 secs  
+Total time: 12.884 secs
 ```  
 
-在我的机器上（MacBook Air 2013款，8G内存，算比较低的配置），运行这个test只需要不到2秒钟，这才是TDD该有的速度。
+在我的机器上（MacBook Air 2013款，8G内存，算比较低的配置），运行这个test只需要不到12秒钟，或许没有达到普通JUnit的秒级速度，然而相对于用Instrumentation来说已经是极大的提升了。
 注：第一次运行可能需要下载一些library，或者是gradle本身，可能需要花一点时间，这个跟unit test本身没关。  
 整个项目已经放到github上面：[robolectric-demo](https://github.com/ChrisZou/robolectric-demo)  
 
@@ -136,7 +138,3 @@ Total time: 1.45 secs
 总体来说，Robolectric是个非常强大好用的unit testing framework。虽然使用的过程中肯定也会遇到问题，我个人就遇到不少问题，尤其是跟第三方的library比如Retrofit、ActiveAndroid结合使用的时候，会有不少问题，但瑕不掩瑜，我们依然可以用它完成很大部分的unit testing工作。  
 
 有任何意见或建议，或者发现文中任何问题，欢迎留言评论！  
-
-更多文章请访问[个人博客](http://chriszou.com/)  
-作者：[邹小创](http://chriszou.com/)    
-[Github](https://github.com/ChrisZou/) [微博](http://weibo.com/happystriving) [邮件](happystriving@126.com)  
