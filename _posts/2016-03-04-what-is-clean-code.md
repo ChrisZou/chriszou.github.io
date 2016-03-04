@@ -66,4 +66,13 @@ Expressiveness to me includes meaningful names, and I am likely to change the na
 
 “Pretty much what you expected”，但是每个人expect的代码的样子都是不一样的，一个初学者expected的代码的样子可能相对也会比较初级，难道那个也能称作clean code吗？I might have a different opinion.
 
+总结一下，我个人认为以下几点，非常值得我们参考：
+
+1.  Single Responsibility. 一个类只做它该做的事情，一个方法做一件事。
+2. Minimal API：一个类对外暴露的接口应该是尽量少的，其实这也就意味着多用Composition，少用继承，因为继承，意味着这个类继承了父类所有的接口，这跟Minimal API明显是相对的。
+3. Unit Test：这不是一件无关紧要的事情，不要说“仅仅是为了测试”这样的话。。。
+4. Naming：这也是一件非常重要的事情，类名，方法名，变量名等等，这都是非常影响可读性的。哪怕写起来不大顺手，也需要为了更好的可读性，设计一个更好的接口。为什么？因为[读代码的时间比写代码的时间多出10倍不止](http://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is)，这个在书中也有提到，是通过人们对Emacs的使用情况，真实统计出来的。从另外一个角度来讲，代码写出来是一次性的，而之后被阅读的次数却是无法估计的。
+5. DRY: [Duplication is the root of all evil in software design](https://www.goodreads.com/work/quotes/18312943-the-robert-c-martin-clean-code-collection-collection).
+
+
 大家觉得，什么样的代码才是好代码呢？
