@@ -63,6 +63,7 @@ Expressiveness to me includes meaningful names, and I am likely to change the na
 #### 6. Ward Cunningham, Wiki发明人，Fit发明人，eXtreme Programming共同发明人. Design Patterns、OO思想领袖。The godfather of all those who care about code.
 
 > You know you are working on clean code when each routine you read turns out to be pretty much what you expected. You can call it beautiful code when the code also makes it look like the language was made for the problem.
->
 
 “Pretty much what you expected”，但是每个人expect的代码的样子都是不一样的，一个初学者expected的代码的样子可能相对也会比较初级，难道那个也能称作clean code吗？I might have a different opinion.
+
+大家觉得，什么样的代码才是好代码呢？
