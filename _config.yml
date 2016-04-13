@@ -1,6 +1,6 @@
-name: 邹小创
+name: 小创
 description: '关于技术和生活'
-meta_description: "邹小创 关于技术和生活"
+meta_description: "小创 关于技术和生活"
 
 markdown: redcarpet
 highlighter: pygments
@@ -12,6 +12,6 @@ enable_sharing: false
 
 # Details for the RSS feed generator
 url:            'http://chriszou.com'
-author:         '邹小创'
+author:         '小创'
 
 gems: [jekyll-paginate]
