@@ -63,7 +63,17 @@ public class CalculatorTest {
 ![](http://7xod3k.com1.z0.glb.clouddn.com/wcnytvwnygfojzjowhigubdmzrbbrjix)
 
 从图中你可以看出，你可以按快捷键`Ctrl+Shift+R`快速运行，当然，这要求你的光标当前焦点是在这个方法内部的。如果你的焦点是在类内部，而不在某一个测试方法内部，那么`Ctrl+Shift+R`将运行这个测试类的所有测试方法。当然，你也可以通过右键点击测试类名来运行这个测试类里面的所有测试方法。  
-除了在AndroidStudio里面运行，你还可以在命令行通过`gradle testDebugUnitTest`，或者是`gradle testReleaseUnitTest`，分别运行debug和release版本的unit testing，这种方式可以一次性运行所有测试类的所有测试方法。  
+运行结束以后，你会在底部的“Run”这个tab看到运行的结果，如下图所示：
+
+![](http://7xod3k.com1.z0.glb.clouddn.com/kpscjaojwbuhmyiciefsyhwfccuialkz)
+
+除了在AndroidStudio里面运行，你还可以在命令行通过`gradle testDebugUnitTest`，或者是`gradle testReleaseUnitTest`，分别运行debug和release版本的unit testing，这种方式可以一次性运行所有测试类的所有测试方法。 这种方式的运行结果如下图所示：
+
+![](http://7xod3k.com1.z0.glb.clouddn.com/hfdcufppwnpkuhuxaqowjrcigdszmmiv)
+
+每个test case的报告可以在project_root/app/build/reports/tests/debug/index.html 这个xml里面看到。大致如下图：
+
+![](http://7xod3k.com1.z0.glb.clouddn.com/rbmvgkjgfnxyjbzktnsgwgkzwncduhut)
 这篇文章的代码在[github](https://github.com/ChrisZou/android-unit-testing-tutorial)上，感兴趣的可以clone下来自己试试。
 
 ## 单元测试不是集成测试
