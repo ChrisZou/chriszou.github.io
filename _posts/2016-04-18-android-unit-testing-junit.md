@@ -3,7 +3,7 @@ layout: post
 title: 'Android单元测试(三)：JUnit单元测试框架的使用'
 date: 2016-04-18T08:30:34+08:00
 comments: true
-changyan_sid: android-unit-testing-junit
+post_id: android-unit-testing-junit
 ---
 我们写单元测试，一般都会用到一个或多个单元测试框架，在这里，我们介绍一下JUnit4这个测试框架。这是Java界用的最广泛，也是最基础的一个框架，其他的很多框架，包括我们后面会看到的Robolectric，都是基于或兼容JUnit4的。  
 然而首先要解决的问题是。。。

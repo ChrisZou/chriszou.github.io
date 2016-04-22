@@ -3,7 +3,7 @@ layout: post
 title: 'Android单元测试（二）：再来谈谈为什么'
 date: 2016-04-16T18:57:27+08:00
 comments: true
-changyan_sid: android-unit-testing-about-why
+post_id: android-unit-testing-about-why
 ---
 今天早上8点半坐到桌子前，打开电脑，看了几分钟体育新闻，做其他一些准备工作，到9点开始真正开始着手写这篇文章。于是开始google，找资料，打算列一大段冠冕堂皇的理由，来说明为什么要写单元测试，比如：
 

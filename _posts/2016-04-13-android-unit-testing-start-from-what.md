@@ -3,7 +3,7 @@ layout: post
 title: "Android单元测试: 首先，从是什么开始"
 date: 2016-04-13T08:24:43+08:00
 comments: true
-changyan_sid: android-unit-testing-start-from-what
+post_id: android-unit-testing-start-from-what
 ---
 
 这是一系列安卓单元测试的文章，目测主要会cover以下的主题：

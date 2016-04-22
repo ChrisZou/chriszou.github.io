@@ -3,7 +3,7 @@ layout: post
 title: '民主和文明，需要我们自己去争取'
 date: 2016-02-20T16:54:22+08:00
 comments: true
-changyan_sid: democracy-is-owned-instead-of-given
+post_id: democracy-is-owned-instead-of-given
 ---
 
 过年在家看完了《野火集》，一本刷新我三观的书。据说这本书最初写的是30年前的台湾，然而字字句句每行每页，我看到的都是如今的中国大陆：政治独裁、官员腐败、民众冷漠、环境无节制污染、各种不文明、不公平、不道德的行为盛行无阻。。。  

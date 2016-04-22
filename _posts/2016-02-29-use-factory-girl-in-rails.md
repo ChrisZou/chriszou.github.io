@@ -3,7 +3,7 @@ layout: post
 title: "Use FactoryGirl in Rails"
 date: 2016-02-29T06:57:43+08:00
 comments: true
-changyan_sid: use-factory-girl-in-rails
+post_id: use-factory-girl-in-rails
 ---
 
 [FactoryGirl](https://github.com/thoughtbot/factory_girl) is a gem aimed at replacing Fixtures. If you wonder that, take a look at [what's wrong with fixtures](http://www.dan-manges.com/blog/38).

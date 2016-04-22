@@ -3,7 +3,7 @@ layout: post
 title: '命名是件大事情'
 date: 2016-03-10T08:56:04+08:00
 comments: true
-changyan_sid: naming-is-no-little-thing
+post_id: naming-is-no-little-thing
 ---
 
 这是《Clean code》第二章的笔记总结，关于程序变量、方法、类的命名的一些建议。文章的内容还是非常有帮助的。很多的建议虽然我们都听过，然而看了其中的例子，你就会发现，那些建议都并不是一句空话，这样写和那样写，可读性就是有很大不同。

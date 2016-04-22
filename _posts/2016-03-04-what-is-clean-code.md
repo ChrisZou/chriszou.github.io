@@ -3,7 +3,7 @@ layout: post
 title: '《Clean Code》阅读：在大师们的眼中，什么样的Code才是Clean Code？'
 date: 2016-03-04T07:23:47+08:00
 comments: true
-changyan_sid: what-is-clean-code
+post_id: what-is-clean-code
 ---
 
 

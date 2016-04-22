@@ -3,7 +3,7 @@ layout: post
 title: Life is short
 date: 2016-02-27T07:43:38+08:00
 comments: true
-changyan_sid: life-is-short
+post_id: life-is-short
 ---
 
 这是[Paul Graham](http://www.paulgraham.com/)上个月在他的个人网站上面发表的一篇文章，在twitter上引起了大量的转载。Paul Graham何许人也？硅谷非常著名的创业家，[YCombinator](https://www.ycombinator.com/)的Co-founder。YCombinator（简称YC）是什么东西？  YCombinator是美国一个类似于创新工场的创业孵化器。当然正确的说法应该是，先有YC，后有创新工场。同时，YC所孵化出来成功的公司：Dropbox，Airbnb、Heroku、Codecademy、Disqus、Reddit、BusinessInsider，Just to name a few。也是创新工场: 知乎、涂鸦移动、豌豆荚、友盟等等，所不能比的。当然因为GFuckingW的原因，从YC出来的很多公司大家都不知道。  
