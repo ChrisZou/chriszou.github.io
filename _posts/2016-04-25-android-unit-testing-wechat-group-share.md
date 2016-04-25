@@ -63,8 +63,7 @@ Test Pyramid理论基本大意是，单元测试是基础，是我们应该花�
 使用这种方式，所有production code都不用专门为testing增加任何多余的代码，同时还能得到依赖注入的其他好处。
 
 ### Robolectric：解决Android单元测试最大的痛点
-接下来讲讲Android单元测试最大的痛点，那就是JVM上面运行纯JUnit单元测试时是不能使用Android相关的类的，因为我们开发用到的安卓环境是没有实现的，里面只定义了一些接口，所有方法的实现都是`throw new RuntimeException("stub");`，如果我们单元测试代码里面用到了安卓相关的代码的话，那么运行时就会遇到`RuntimeException("Stub")`。
-
+接下来讲讲Android单元测试最大的痛点，那就是JVM上面运行纯JUnit单元测试时是不能使用Android相关的类的，因为我们开发用到的安卓环境是没有实现的，里面只定义了一些接口，所有方法的实现都是`throw new RuntimeException("stub");`，如果我们单元测试代码里面用到了安卓相关的代码的话，那么运行时就会遇到`RuntimeException("Stub")`。  
 要解决这个问题，一般来说有三种方案：
 
 1. 使用Android提供的Instrumentation系统，将单元测试代码运行在模拟器或者是真机上。
@@ -74,7 +73,6 @@ Test Pyramid理论基本大意是，单元测试是基础，是我们应该花�
 第一种方案能work，但是速度非常慢，因为每次运行一次单元测试，都需要将整个项目打包成apk，上传到模拟器或真机上，就跟运行了一次app似得，这个显然不是单元测试该有的速度，更无法做TDD。这种方案首先被否决。  
 
 刚开始，我们采用的是Robolectric，原因有两个：1. 我们项目当时还没有比较清楚的架构，android跟纯java代码的隔离没有做好；2. 很多安卓相关的代码，还是需要测试的，比如说自定义View等等。然而慢慢的，我们的态度从拥抱Robolectric，到尽量不用它，尽量使用纯java代码去实现。可能大家觉得安卓相关的代码会很多，而纯java的很少，然而慢慢的你会发现，其实不是这样的，纯java的代码其实真不少，而且往往是核心的逻辑所在。之所以尽量不用Robolectric，是因为Robolectric虽然相对于Instrumentation testing来说快多了。但毕竟他也需要merge一些资源，build出来一个模拟的app，因此相对于纯java和JUnit来说，这个速度依然是很慢的。  
-
 用具体的数字来对比说明：
 
 - 运行Instrumentation testing：几十秒，取决于app的大小
@@ -87,14 +85,12 @@ Test Pyramid理论基本大意是，单元测试是基础，是我们应该花�
 
 ### 一个具体的案例
 
-接下来，我通过一个具体的案例，跟大家介绍一下，我们这边的一个app，具体是怎么单测的。
-
+接下来，我通过一个具体的案例，跟大家介绍一下，我们这边的一个app，具体是怎么单测的。  
 这里是我们收银台界面的样子：
 
 ![](http://7xod3k.com1.z0.glb.clouddn.com/sezrukyzkxicgnqefwzfeyumnyqffgdp)
 
-假设Activity名字为`CheckoutActivity`，当它启动的时候，`CheckoutActivity`会去调一个`CheckoutModel`的`loadCheckoutData()`方法，这个方法又会去调更底层的一个封装了用户认证等信息的网络请求Api类(`mApi`)的get方法，同时传给这个Api类一个callback。这个callback的做的事情是将结果通过[Otto Bus](https://github.com/square/otto)(`mBus`) post出去。`CheckoutActivity`里面Subscribe了这个Event（方法名是`onCheckoutDataLoaded()`），然后根据Event的值相应的显示数据或错误信息。
-
+假设Activity名字为`CheckoutActivity`，当它启动的时候，`CheckoutActivity`会去调一个`CheckoutModel`的`loadCheckoutData()`方法，这个方法又会去调更底层的一个封装了用户认证等信息的网络请求Api类(`mApi`)的get方法，同时传给这个Api类一个callback。这个callback的做的事情是将结果通过[Otto Bus](https://github.com/square/otto)(`mBus`) post出去。`CheckoutActivity`里面Subscribe了这个Event（方法名是`onCheckoutDataLoaded()`），然后根据Event的值相应的显示数据或错误信息。  
 代码简写如下：
 
 ```java
@@ -136,8 +132,7 @@ public class CheckoutModel {
 }
 ```
 
-这里，`CheckoutActivity`里面的`mCheckoutModel`、CheckoutModel里面的`mApi`、CheckoutModel里面的`mBus`，都是通过Dagger2注入进去的。在做单元测试的时候，这些都是mock。
-
+这里，`CheckoutActivity`里面的`mCheckoutModel`、CheckoutModel里面的`mApi`、CheckoutModel里面的`mBus`，都是通过Dagger2注入进去的。在做单元测试的时候，这些都是mock。  
 对于这个流程，我们做了如下的单元测试：
 
 - `CheckoutActivity`启动单元测试：通过Robolectric提供的方法，启动一个`Activity`。验证里面的`mCheckoutModel`的`loadCheckoutData()`方法得到了调用，同时参数（订单ID等）是对的。
@@ -219,8 +214,7 @@ describe Hash do
 end
 ```
 
-这里的关键是，当测试方法失败的时候，这个字符串是要能被加到错误信息里面的。我们做了个JUnit Rule来达到这个效果。做法是结合一个自定义的annotation，这个annotation接收一个String，来描述这个测试方法的测试目的。在Rule里面将这个annotation读出来，如果测试没通过的话，把这个描述性的String加到输出的error message里面。这样在批量运行的时候，一看就知道没通过的测试是测什么东西的。而测试方法的命名则可以比较随意。
-
+这里的关键是，当测试方法失败的时候，这个字符串是要能被加到错误信息里面的。我们做了个JUnit Rule来达到这个效果。做法是结合一个自定义的annotation，这个annotation接收一个String，来描述这个测试方法的测试目的。在Rule里面将这个annotation读出来，如果测试没通过的话，把这个描述性的String加到输出的error message里面。这样在批量运行的时候，一看就知道没通过的测试是测什么东西的。而测试方法的命名则可以比较随意。  
 达到的效果如下：
 
 ![](http://7xod3k.com1.z0.glb.clouddn.com/elcvbteetpbzwlebjnirlmvfkqyjwdrj)
