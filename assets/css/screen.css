@@ -780,6 +780,10 @@ body:not(.post-template) .post-title {
     border-radius: 100%;
 }
 
+.post-content a {
+  color: #0088cc
+}
+
 .post-meta a {
     color: #9EABB3;
     text-decoration: none;
