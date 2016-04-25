@@ -74,7 +74,6 @@ public class CalculatorTest {
 每个test case的报告可以在project_root/app/build/reports/tests/debug/index.html 这个xml里面看到。大致如下图：
 
 ![](http://7xod3k.com1.z0.glb.clouddn.com/rbmvgkjgfnxyjbzktnsgwgkzwncduhut)
-这篇文章的代码在[github](https://github.com/ChrisZou/android-unit-testing-tutorial)上，感兴趣的可以clone下来自己试试。
 
 ## 单元测试不是集成测试
 这里需要强调一个观念，那就是单元测试只是测试一个方法单元，它不是测试一整个流程。举个例子来说，一个Login页面，上面有两个输入框和一个button。两个输入框分别用于输入用户名和密码。点击button以后，有一个`UserManager`会去执行`performlogin`操作，然后将结果返回，更新页面。  
@@ -108,5 +107,7 @@ public void login() {
 
 ## 小结
 上面讲述了单元测试的定义，以及与集成测试的区别，一般来说，单元测试不会接触到数据库，不会接触到网络，不会接触到一些复杂的外部环境，如果有的话，那可能是你测试的方式有误，测试的粒度不够“单元”，希望这篇文章能将这两者的区别解释清楚。
+
+这篇文章的代码在[github](https://github.com/ChrisZou/android-unit-testing-tutorial)上
 
 如果文中有任何的错误或疑问欢迎留言。
