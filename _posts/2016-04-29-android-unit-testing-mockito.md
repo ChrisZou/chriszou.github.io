@@ -1,13 +1,11 @@
 ---
 layout: post
-title: android unit testing mockito
+title: 'Android单元测试（四）：Mock以及Mockito的使用'  
 date: 2016-04-29T07:30:49+08:00
 comments: true
-post_id: android-unit-testing-mockito
+post_id: android-unit-testing-mock-and-mockito
 ---
 
-
-Android单元测试（四）：Mockito的使用  
 [在第一篇文章里面](http://chriszou.com/2016/04/13/android-unit-testing-start-from-what.html)我们提到，void方法的测试方式是，测试里面的其他的对象是否得到调用了。在那篇文章里面，我举的例子是activity里面的一个login方法：
 
 ```java
