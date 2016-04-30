@@ -10,7 +10,7 @@ post_id: android-unit-testing-mock-and-mockito
 > 1. 代码中的 //<== 表示跟上面的相比，这是新增的，或者是修改的代码，不知道怎么样在代码块里面再强调几行代码T_T。。。  
 > 2. 很多时候，为了避免中文歧义，我会用英文表述
 
-[在第一篇文章里面](http://chriszou.com/2016/04/13/android-unit-testing-start-from-what.html)我们提到，void方法的测试方式，往往是是验证里面的某个对象的某个方法是否得到了调用。在那篇文章里面，我举的例子是activity里面的一个login方法：
+[在第一篇文章里面](http://chriszou.com/2016/04/13/android-unit-testing-start-from-what.html)我们提到，返回类型为void方法的单元测试方式，往往是验证里面的某个对象的某个方法是否得到了调用。在那篇文章里面，我举的例子是activity里面的一个login方法：
 
 ```java
 public void login() {
@@ -349,7 +349,7 @@ public void testSpy() {
     //跟创建mock类似，只不过调用的是spy方法，而不是mock方法。spy的用法
     PasswordValidator spyValidator = Mockito.spy(PasswordValidator.class);
 
-    //在默认情况下，spy对象会调用这个类的real implementation，并返回相应的返回值，这可以对照上面的真实逻辑
+    //在默认情况下，spy对象会调用这个类的真实逻辑，并返回相应的返回值，这可以对照上面的真实逻辑
     spyValidator.verifyPassword("xiaochuang_is_handsome"); //true
     spyValidator.verifyPassword("xiaochuang_is_not_handsome"); //false
     
