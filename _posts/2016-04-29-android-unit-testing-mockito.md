@@ -23,7 +23,7 @@ public void login() {
 }
 ```
 
-对于这个login方法的单元测试，应该是调用Activity里面的这个login方法，然后验证`mUserManager`的`performLogin`方法得到了验证。但是如果使用Activity，我们就需要用到[Robolectric](http://robolectric.org/)框架，然而我们到目前为止还没有讲到Robolectric的使用。所以在这篇文章中，我们假设这段代码是放在一个Presenter（LoginPresenter）里面的，这个是[MVP模式](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)里面的概念，这个`LoginPresenter`是一个纯java类，而用户名和密码是外面传进来的：
+对于这个login方法的单元测试，应该是调用Activity里面的这个login方法，然后验证`mUserManager`的`performLogin`方法得到了调用。但是如果使用Activity，我们就需要用到[Robolectric](http://robolectric.org/)框架，然而我们到目前为止还没有讲到Robolectric的使用。所以在这篇文章中，我们假设这段代码是放在一个Presenter（LoginPresenter）里面的，这个是[MVP模式](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)里面的概念，这个`LoginPresenter`是一个纯java类，而用户名和密码是外面传进来的：
 
 ```java
 public class LoginPresenter {
@@ -220,7 +220,7 @@ public void testLogin() throws Exception {
 当然，如果你的正式代码里面没有任何地方用到了那个setter的话，那么专门为了测试而增加了一个方法，毕竟不是很优雅的解决办法，更好的解决办法是使用依赖注入，简单解释就是把`UserManager`作为`LoginPresenter`的构造函数的参数，传进去。具体操作请期待下一篇文章^_^，这里我们专门讲mock的概念和Mockito的使用。
 
 然而还是忍不住想多嘴一句：
-优雅归优雅，有么有必要，值不值得，却又是另外一回事。总体来说，我认为是值得的，因为这可以让这个类变得可测，也就意味着我们可以验证这个类的正确性，更给以后重构这个类有了保障，防止误改错这个类等等。因此，很多时候，如果你为了做单元测试，不得已要给一些类加一些额外的代码。那就加吧！毕竟优雅不能当饭吃，而解决问题、修复bug可以，做出优秀的、少有bug的产品更可以，所以，Just Do It!
+优雅归优雅，有没有必要，值不值得，却又是另外一回事。总体来说，我认为是值得的，因为这可以让这个类变得可测，也就意味着我们可以验证这个类的正确性，更给以后重构这个类有了保障，防止误改错这个类等等。因此，很多时候，如果你为了做单元测试，不得已要给一些类加一些额外的代码。那就加吧！毕竟优雅不能当饭吃，而解决问题、修复bug可以，做出优秀的、少有bug的产品更可以，所以，Just Do It!
 
 好了，现在我想大家对mock的概念应该有了正确的认识，对怎么样使用mock也有了认识，接下来我们就可以全心全意介绍Mockito的功能和使用了。
 
@@ -371,6 +371,5 @@ public void testSpy() {
 下一篇文章我们将介绍依赖注入的概念，以及（或许）使用dagger2来更方便的做依赖注入，以及在单元测试里面的应用，这里依然后很多的误区，需要大家注意的，想知道具体是什么吗？那就  
 Stay tuned！
 
-
-文中代码在[github](https://github.com/ChrisZou/android-unit-testing-tutorial)
+文中代码在[Github](https://github.com/ChrisZou/android-unit-testing-tutorial)
 
