@@ -371,3 +371,6 @@ public void testSpy() {
 下一篇文章我们将介绍依赖注入的概念，以及（或许）使用dagger2来更方便的做依赖注入，以及在单元测试里面的应用，这里依然后很多的误区，需要大家注意的，想知道具体是什么吗？那就  
 Stay tuned！
 
+
+文中代码在[github](https://github.com/ChrisZou/android-unit-testing-tutorial)
+
