@@ -49,7 +49,7 @@ public class LoginPresenterTest {
         LoginPresenter loginPresenter = new LoginPresenter();
         loginPresenter.login("xiaochuang", "xiaochuang password");
 
-        //验证LoginPresenter里面的mUserManager的performLogin()方法得到了调用，同时参数分别是“xiaochuang”、“xiaochuang‘s password”
+        //验证LoginPresenter里面的mUserManager的performLogin()方法得到了调用，同时参数分别是“xiaochuang”、“xiaochuang password”
         ...
     }
 }
@@ -78,7 +78,7 @@ public class LoginPresenterTest {
         LoginPresenter loginPresenter = new LoginPresenter();
         loginPresenter.login("xiaochuang", "xiaochuang password");
         
-        //验证LoginPresenter里面的mUserManager的performLogin()方法得到了调用，参数分别是“xiaochuang”、“xiaochuang‘s password”
+        //验证LoginPresenter里面的mUserManager的performLogin()方法得到了调用，参数分别是“xiaochuang”、“xiaochuang password”
         ...
     }
 }
