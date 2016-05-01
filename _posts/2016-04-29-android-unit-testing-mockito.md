@@ -373,3 +373,4 @@ Stay tuned！
 
 文中代码在[Github](https://github.com/ChrisZou/android-unit-testing-tutorial)
 
+最后，如果你也对安卓单元测试感兴趣的话，欢迎加入我们的交流群：![](http://chriszou.com/assets/images/android_unit_testing_group.jpg)
