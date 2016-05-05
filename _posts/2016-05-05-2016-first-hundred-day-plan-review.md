@@ -6,15 +6,18 @@ comments: true
 post_id: 2016-first-hundred-day-plan-review
 ---
 
-从2016年1月2日，我拉了一个群，跟其他24各小伙伴一起做了件事，叫100天计划。这是在“warfalcon”这个公众号看到的一种做法，一本大意就是100天之内坚持做同一件事情。关于100天计划的具体说明可以在[这里](https://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5NjA3OTM0MA==&appmsgid=10000225&itemidx=1&sign=5841ae7c9309e5ee067097b1a9184bcb&scene=1&srcid=05037CYTdXvkjJfiCxRlXX0n&uin=MjU1ODA3OTAxNw%3D%3D&key=b28b03434249256b2692686e03d1265388913cf53a3ebd48f6169a4719addbf7237ce2c14d2a260e6f3e2a1f91c3fb45&ascene=0&pass_ticket=oMgFLy28O%2B9AOKlJdeXyoXSwtxt1PL7uRyqgJe9senZKF7jN894WPblmeyPM3CDp)跟[这里](https://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5NjA3OTM0MA==&appmsgid=10000227&itemidx=1&sign=49d3b21079972bac75659094b27f3cfd&scene=1&srcid=05031q0jUHNA0knWfENSP2KJ&uin=MjU1ODA3OTAxNw%3D%3D&key=b28b03434249256bab1ee9026d6354d71fac699128f6f9416c72247aa662b9a78ee7362a1f775d1c775ea78e8d69ecb0&ascene=0&pass_ticket=oMgFLy28O%2B9AOKlJdeXyoXSwtxt1PL7uRyqgJe9senZKF7jN894WPblmeyPM3CDp)看到。其实也不是我第一次做这件事情了，去年的时候，举行了执行过一次，当时给自己定的项目是每天看英文书局1个小时。但是那次执行的比较混乱，最后花了130多天才完成，也没有记录得很好。  
-这次我给自己定的项目是“每天阅读或写作一个小时”，依然不是100%的坚持，很多时候也会偷懒，最后花了114天完成。期间做完的事情如下：
+今年年初，1月2日，我拉了一个群，跟其他24个小伙伴一起做了件事，叫100天计划。这是在“warfalcon”这个公众号看到的一种做法，基本大意就是在100天之内，每天坚持做同一件事情。关于100天计划的具体说明可以在[这里](https://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5NjA3OTM0MA==&appmsgid=10000225&itemidx=1&sign=5841ae7c9309e5ee067097b1a9184bcb&scene=1&srcid=05037CYTdXvkjJfiCxRlXX0n&uin=MjU1ODA3OTAxNw%3D%3D&key=b28b03434249256b2692686e03d1265388913cf53a3ebd48f6169a4719addbf7237ce2c14d2a260e6f3e2a1f91c3fb45&ascene=0&pass_ticket=oMgFLy28O%2B9AOKlJdeXyoXSwtxt1PL7uRyqgJe9senZKF7jN894WPblmeyPM3CDp)跟[这里](https://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5NjA3OTM0MA==&appmsgid=10000227&itemidx=1&sign=49d3b21079972bac75659094b27f3cfd&scene=1&srcid=05031q0jUHNA0knWfENSP2KJ&uin=MjU1ODA3OTAxNw%3D%3D&key=b28b03434249256bab1ee9026d6354d71fac699128f6f9416c72247aa662b9a78ee7362a1f775d1c775ea78e8d69ecb0&ascene=0&pass_ticket=oMgFLy28O%2B9AOKlJdeXyoXSwtxt1PL7uRyqgJe9senZKF7jN894WPblmeyPM3CDp)找到。其实这也不是我第一次做这件事情了，去年的时候就执行过一次，当时给自己定的项目是每天看英文书局1个小时。但是那次执行的比较混乱，最后花了130多天才完成，也没有记录得很好。  
+
+这次我给自己定的项目是“每天阅读或写作一个小时”，依然不是100%的坚持，很多时候也会偷懒，最后花了114天完成。最后坚持下来的有10个人，其中有3个小伙伴做到了100%坚持，每一天都完成了，也没有请过一天假，真是神一样的存在。
+
+Anyway，我在这期间做完的事情如下：
 
 
 ## 看书
 看完了的(后面是评分)
 
 
-- [Learned Optimism](https://book.douban.com/subject/1759903/) ☆☆☆☆☆
+- Learned Optimism ☆☆☆☆☆
 - 被讨厌的勇气 ☆☆☆☆☆
 - 楚亡 ☆☆☆☆☆
 - 野火集 ☆☆☆☆☆
@@ -24,11 +27,11 @@ post_id: 2016-first-hundred-day-plan-review
 - 领导梯队    ☆☆☆☆
 - 亲爱的安德烈 ☆☆☆☆
 
-没看完的
+没看完的（后面是看完的部分）
 
-- Android框架解密
-- Clean code
-- 说话的魅力
+- Android框架解密（40%）
+- Clean code（40%）
+- 说话的魅力（50%）
 
 貌似都是非技术类的，而技术类的，额。。。
 
@@ -53,7 +56,7 @@ post_id: 2016-first-hundred-day-plan-review
 - Rxjava（完善中）
 - 如果没有财务压力，你想做什么（写了两天写不下去，没发表）
 
-写的东西却刚好相反，技术类文章偏多。可能因为非技术文不知道写什么吧。
+写的东西却刚好相反，技术类文章偏多。可能因为人文素养不够，非技术类文章不知道写什么吧。
 
 
 ## 小结
