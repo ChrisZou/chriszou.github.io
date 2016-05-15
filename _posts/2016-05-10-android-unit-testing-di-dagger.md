@@ -404,7 +404,7 @@ public class AppModule {
                 .build();
         return okhttpClient;
     }
-    
+
     //other method
 }
 ```
@@ -663,7 +663,7 @@ buildscript {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
-    
+
 apply plugin: 'com.android.application'  //这个已经有了，这里只是想说明要把android-apt这个plugin放到这个的后面。
 apply plugin: 'com.neenbedankt.android-apt'
 
@@ -679,6 +679,8 @@ dependencies {
 
 应该说，DI是一种很好的模式，哪怕不做单元测试，DI也会让我们的app的架构变得干净很多，可读性、维护性和可拓展性强很多，只不过单元测试让DI的必要性变得更加显著和迫切而已。而dagger2的作用，或者说角色，在于它让我们写正式代码的时候使用DI变得易如反掌，程序及其简洁优雅可读性高。同时，它在某些情况下让原来很难测的代码变得用以测试。
 
-文中的代码在[github这个项目里面](https://github.com/ChrisZou/android-unit-testing-tutorial)。
+文中的代码在[github这个项目里面](https://github.com/ChrisZou/android-unit-testing-tutorial)。  
+最后，如果你也对安卓单元测试感兴趣的话，欢迎加入我们的交流群：  
+![](http://chriszou.com/images/android_unit_testing_group.jpg)
 
 参考：https://www.youtube.com/watch?v=oK_XtfXPkqw
