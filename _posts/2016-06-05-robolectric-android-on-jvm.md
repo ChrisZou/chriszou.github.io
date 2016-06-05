@@ -49,11 +49,12 @@ public class Test {
 ### Robolectric to the rescue  
 解决的办法就是使用一个开源的framework，叫[robolectric](http://robolectric.org/)，他们的做法是通过实现一套JVM能运行的Android代码，然后在unit test运行的时候去截取android相关的代码调用，然后转到他们的他们实现的代码去执行这个调用的过程。举个例子说明一下，比如android里面有个类叫`TextView`，他们实现了一个类叫`ShadowTextView`。这个类基本上实现了`TextView`的所有公共接口，假设你在unit test里面写到  
 `String text = textView.getText().toString();`。在这个unit test运行的时候，Robolectric会自动判断你调用了Android相关的代码`textView.getText()`，然后这个调用过程在底层截取了，转到`ShadowTextView`的`getText`实现。而`ShadowTextView`是真正实现了`getText`这个方法的，所以这个过程便可以正常执行。  
-除了实现Android里面的类的现有接口，Robolectric还做了另外一件事情，极大地方便了unit testing的工作。那就是他们给每个Shadow类额外增加了很多接口，可以读取对应的Android类的一些状态。比如我们知道`ImageView`有一个方法叫`setImageResource(resourceId)`，然而并没有一个对应的getter方法叫`getImageResourceId()`，这样你是没有办法测试这个`ImageView`是不是显示了你想要的image。而在Robolectric实现的对应的`ShadowImageView`里面，则提供了`getImageResourceId()`这个接口。你可以用来测试它是不是正确的显示了你想要的Image.  
+除了实现Android里面的类的现有接口，Robolectric还做了另外一件事情，极大地方便了unit testing的工作。那就是他们给每个Shadow类额外增加了很多接口，可以读取对应的Android类的一些状态。比如我们知道`ImageView`有一个方法叫`setImageResource(resourceId)`，然而并没有一个对应的getter方法叫`getImageResourceId()`，这样你是没有办法测试这个`ImageView`是不是显示了你想要的image。而在Robolectric实现的对应的`ShadowImageView`里面，则提供了`getImageResourceId()`这个接口。你可以用来测试它是不是正确的显示了你想要的Image。  
 
 ### Talk is cheap. Show me the code!  
 下面简单的介绍一下使用Robolectric来做unit testing。注意：下面的配置方法指的是AndroidStudio上面的，Eclipse用户自行google一下配制方法。  
 要使用Robolectric，需要做几步配置工作。  
+
 1. 首先需要将它和JUnit4加到你项目的dependencies里面，  
 
 ```  
@@ -146,7 +147,7 @@ Total time: 12.884 secs
 --------------------------原文结束--------------------------
 今天回过头来看，我想强调的是，Robolectric到底应该充当什么样的一个角色。在没有Robolectric的pure JUnit世界，我们是很难对一整个流程进行测试的，因为上层的界面是安卓的类，底层的数据库和Preference等等是安卓的类。因此，我们没有办法对一整个流程做一个完整的测试。然而有了robolectric以后，我们就可以这么做了：启动activity，向网络或数据库请求数据，更新界面。。。因此，有了这个东西以后，我们的第一反应可能就是去测试这整个app流程。所以经常有小伙伴问我，Robolectric到底是做单元测试的框架，还是做集成测试，甚至UI测试的框架？  
 这就是我想强调的，需要避免的陷阱。对于上面的问题，我的回答是：Robolectric就是一个能够让我们在JVM上跑 **测试** 时够调用安卓的类的框架，至于我们是拿它来做单元测试还是集成测试，完全取决于我们自己。而回到我们强调的 **单元测试**，测一个小的独立的代码单元，Robolectric的角色，应该是一个让我们在做 **单元测试** 的过程中，能够调用安卓的类，测试安卓的类，把安卓的类当做普通的纯java类的一个framework，仅此而已。  
-这点，谨记。
+这点，谨记。  
 
 最后，如果你也对安卓单元测试感兴趣的话，欢迎加入我们的交流群：![](http://chriszou.com/images/android_unit_testing_group.jpg)
 
