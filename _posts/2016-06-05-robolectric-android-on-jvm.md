@@ -151,4 +151,6 @@ Total time: 12.884 secs
 
 最后，如果你也对安卓单元测试感兴趣的话，欢迎加入我们的交流群：![](http://chriszou.com/images/android_unit_testing_group.jpg)
 
+（微信群已满100人，请先关注公众号，从公众号的菜单获取加入方法）
+
 有任何意见或建议，或者发现文中任何问题，欢迎留言评论！  
