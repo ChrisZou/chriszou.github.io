@@ -18,15 +18,15 @@ post_id: android-unit-testing-everything-you-need-to-know
 6. [使用dagger2来做依赖注入，以及在单元测试中的应用](http://chriszou.com/2016/05/10/android-unit-testing-di-dagger.html)：上一篇文章讲了依赖注入，而Dagger2能让我们易如反掌的使用依赖注入的模式，代码的耦合度变得非常低。
 7. [Robolectric，在JVM上调用安卓的类](http://chriszou.com/2016/06/05/robolectric-android-on-jvm.html)：解决在JVM上做单元测试的时候，无法调用和测试安卓的类的问题。
 
-其它的一些文章（需要点击“阅读原文”才能链接过去）：  
+其它的一些文章：  
 
 1. [Android单元测试在蘑菇街支付金融部门的实践](http://chriszou.com/2016/04/25/android-unit-testing-wechat-group-share.html)：这个是在InfoQ的移动前线学习分享群里面作的一个分享，首发于”移动开发前线”公众号，也在InfoQ网站上发表过，讲了的单元测试在蘑菇街支付金融部门的实践。
 2. [MDay上的分享-关于安卓单元测试的一切](http://mday.mogu.io/)：这是在MDay第五季作的一次分享，有[PPT](http://s17.mogucdn.com/new1/v1/bmisc/8e35bea4d4af0b7816e0dce0f0d39024/175107743310.pdf)和视频，不过视频暂时还没有公开，如果公开了会第一时间更新过来。
 
 安卓单元测试是不是只有这些东西？当然不是，只不过，主要的概念和框架都在这了。剩下的相对来说更多是一些具体的技巧、解决某个具体问题的方法等等。对于这些东西，以后也会有文章介绍，敬请关注。  
 
-以上，希望能帮助到你。如果觉得有用，请分享一下，以便帮助到其它人。分享是一种美德，这也是我坚持写作的初衷。
-
 最后，如果你也对安卓单元测试感兴趣的话，欢迎加入我们的交流群：![](http://chriszou.com/images/android_unit_testing_group.jpg)
+
+以上，希望能帮助到你。如果觉得有用，请分享一下，以便帮助到其它人。分享是一种美德，这也是我坚持写作的初衷。
 
 (如果提示群满了，请关注一下公众号，在公众号的菜单有加入方法)
