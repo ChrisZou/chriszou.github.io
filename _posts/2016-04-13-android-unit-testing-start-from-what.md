@@ -110,4 +110,6 @@ public void login() {
 
 这篇文章的代码在[github](https://github.com/ChrisZou/android-unit-testing-tutorial)上
 
+最后，如果你对安卓单元测试感兴趣，欢迎加入我们的交流群，因为群成员超过100人，没办法扫码加入，请关注下方公众号获取加入方法。
+
 如果文中有任何的错误或疑问欢迎留言。

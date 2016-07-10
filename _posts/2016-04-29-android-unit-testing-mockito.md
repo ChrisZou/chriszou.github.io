@@ -77,7 +77,7 @@ public class LoginPresenterTest {
         Mockito.mock(UserManager.class);    //<==
         LoginPresenter loginPresenter = new LoginPresenter();
         loginPresenter.login("xiaochuang", "xiaochuang password");
-        
+
         //验证LoginPresenter里面的mUserManager的performLogin()方法得到了调用，参数分别是“xiaochuang”、“xiaochuang password”
         ...
     }
@@ -96,7 +96,7 @@ public class LoginPresenter {
 
         mUserManager.performLogin(username, password);
     }
-    
+
     public UserManager getUserManager() {   //<==
         return mUserManager;
     }
@@ -161,7 +161,7 @@ public class LoginPresenterTest {
     public void testLogin() throws Exception {
         UserManager mockUserManager = Mockito.mock(UserManager.class);  //<==
         LoginPresenter loginPresenter = new LoginPresenter();
-        
+
         loginPresenter.login("xiaochuang", "xiaochuang password");
 
         Mockito.verify(mockUserManager).performLogin("xiaochuang", "xiaochuang password");  //<==
@@ -217,7 +217,7 @@ public void testLogin() throws Exception {
 
 最后运行一次，hu。。。终于通过了！
 
-当然，如果你的正式代码里面没有任何地方用到了那个setter的话，那么专门为了测试而增加了一个方法，毕竟不是很优雅的解决办法，更好的解决办法是使用依赖注入，简单解释就是把`UserManager`作为`LoginPresenter`的构造函数的参数，传进去。具体操作请期待下一篇文章^_^，这里我们专门讲mock的概念和Mockito的使用。
+当然，如果你的正式代码里面没有任何地方用到了那个setter的话，那么专门为了测试而增加了一个方法，毕竟不是很优雅的解决办法，更好的解决办法是使用依赖注入，简单解释就是把`UserManager`作为`LoginPresenter`的构造函数的参数，传进去。具体操作请期待下一篇文章，这里我们专门讲mock的概念和Mockito的使用。
 
 然而还是忍不住想多嘴一句：
 优雅归优雅，有没有必要，值不值得，却又是另外一回事。总体来说，我认为是值得的，因为这可以让这个类变得可测，也就意味着我们可以验证这个类的正确性，更给以后重构这个类有了保障，防止误改错这个类等等。因此，很多时候，如果你为了做单元测试，不得已要给一些类加一些额外的代码。那就加吧！毕竟优雅不能当饭吃，而解决问题、修复bug可以，做出优秀的、少有bug的产品更可以，所以，Just Do It!
@@ -271,7 +271,7 @@ PasswordValidator mockValidator = Mockito.mock(PasswordValidator.class);
 
 //当调用mockValidator的verifyPassword方法，同时传入"xiaochuang_is_handsome"时，返回true
 Mockito.when(mockValidator.verifyPassword("xiaochuang_is_handsome")).thenReturn(true);
-    
+
 //当调用mockValidator的verifyPassword方法，同时传入"xiaochuang_is_not_handsome"时，返回false
 Mockito.when(validator.verifyPassword("xiaochuang_is_not_handsome")).thenReturn(false);
 ```
@@ -320,7 +320,7 @@ public void loginCallbackVersion(String username, String password) {
 
         //callback是第三个参数
         NetworkCallback callback = (NetworkCallback) arguments[2];
-        
+
         callback.onFailure(500, "Server error");
         return 500;
     }
@@ -352,10 +352,10 @@ public void testSpy() {
     //在默认情况下，spy对象会调用这个类的真实逻辑，并返回相应的返回值，这可以对照上面的真实逻辑
     spyValidator.verifyPassword("xiaochuang_is_handsome"); //true
     spyValidator.verifyPassword("xiaochuang_is_not_handsome"); //false
-    
+
     //spy对象的方法也可以指定特定的行为
     Mockito.when(spyValidator.verifyPassword(anyString())).thenReturn(true);
-    
+
     //同样的，可以验证spy对象的方法调用情况
     spyValidator.verifyPassword("xiaochuang_is_handsome");
     Mockito.verify(spyValidator).verifyPassword("xiaochuang_is_handsome"); //pass
@@ -371,6 +371,5 @@ public void testSpy() {
 下一篇文章我们将介绍依赖注入的概念，以及（或许）使用dagger2来更方便的做依赖注入，以及在单元测试里面的应用，这里依然后很多的误区，需要大家注意的，想知道具体是什么吗？那就  
 Stay tuned！
 
-文中代码在[Github](https://github.com/ChrisZou/android-unit-testing-tutorial)
-
-最后，如果你也对安卓单元测试感兴趣的话，欢迎加入我们的交流群：![](http://chriszou.com/assets/images/android_unit_testing_group.jpg)
+文中代码在[Github](https://github.com/ChrisZou/android-unit-testing-tutorial)  
+最后，如果你对安卓单元测试感兴趣，欢迎加入我们的交流群，因为群成员超过100人，没办法扫码加入，请关注下方公众号获取加入方法。

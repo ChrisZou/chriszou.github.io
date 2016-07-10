@@ -84,4 +84,6 @@ post_id: android-unit-testing-about-why
 
 希望这篇文章，能让你多一点学习和实践单元测试的决心，因为这真的是非常值得拥有的一项技能，只是刚开始的时候，需要多一点点时间而已。
 
+最后，如果你对安卓单元测试感兴趣，欢迎加入我们的交流群，因为群成员超过100人，没办法扫码加入，请关注下方公众号获取加入方法。
+
 参考链接：[What is the single most influential book every programmer should read？](http://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read)

@@ -121,5 +121,4 @@ public class LoginPresenterTest {
 
 文中的代码在[github这个项目里面](https://github.com/ChrisZou/android-unit-testing-tutorial)。
 
-最后，如果你也对安卓单元测试感兴趣的话，欢迎加入我们的交流群：  
-![](http://chriszou.com/images/android_unit_testing_group.jpg)
+最后，如果你对安卓单元测试感兴趣，欢迎加入我们的交流群，因为群成员超过100人，没办法扫码加入，请关注下方公众号获取加入方法。
