@@ -94,7 +94,7 @@ public class LoginPresenterTest {
 }
 ```
 
-也就是说，在测试方法运行之前，自动把用`@Mock`标注过的field实例化成Mock对象，这样在测试方法里面就可以直接用了，而不用手动通过`Mockito.mock(YourClass.class)`的方法来创建。这个实现化的过程是在`MockitoRule`这个Rule里面进行的。我们知道一个JUnit Rule会在每个测试方法运行之前执行一些代码，而这个Rule实现的效果就是在每个测试方法运行之前将这个类的用了`@Mock`修饰过的field初始化成mock对象。如果你去看这个Rule的源代码的话，其实重点就在一行代码：
+也就是说，在测试方法运行之前，自动把用`@Mock`标注过的field实例化成Mock对象，这样在测试方法里面就可以直接用了，而不用手动通过`Mockito.mock(YourClass.class)`的方法来创建。这个实现化的过程是在`MockitoRule`这个Rule里面进行的。我们知道([不知道？](http://chriszou.com/2016/07/09/junit-rule.html))一个JUnit Rule会在每个测试方法运行之前执行一些代码，而这个Rule实现的效果就是在每个测试方法运行之前将这个类的用了`@Mock`修饰过的field初始化成mock对象。如果你去看这个Rule的源代码的话，其实重点就在一行代码：
 
 ```java
 MockitoAnnotations.initMocks(target);
@@ -110,7 +110,7 @@ public void setup() {
 }
 ```
 
-达到一样的效果。
+也能达到一样的效果。
 
 ### 使用@InjectMocks
 其实在上面的代码中，我们还可以进一步的简化。我们可以使用`@InjectMocks`来让Mockito自动使用mock出来的`mockUserManager`和`mockValidator`构造出一个`LoginPresenter`：
