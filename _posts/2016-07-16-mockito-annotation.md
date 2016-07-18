@@ -23,7 +23,6 @@ YourClass yourInstance = Mockito.mock(YourClass.class);
 public class LoginPresenterTest {
 
     @Test
-    @JSpec(desc = "should ")
     public void testLogin() {
         UserManager mockUserManager = mock(UserManager.class);
         PasswordValidator mockValidator = mock(PasswordValidator.class);
