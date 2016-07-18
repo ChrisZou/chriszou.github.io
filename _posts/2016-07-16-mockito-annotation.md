@@ -54,7 +54,6 @@ public class LoginPresenterTest {
     }
 
     @Test
-    @JSpec(desc = "should ")
     public void testLogin() {
         Mockito.when(mockValidator.verifyPassword("xiaochuang is handsome")).thenReturn(true);
         loginPresenter.login("xiaochuang", "xiaochuang is handsome");
@@ -74,7 +73,7 @@ public class LoginPresenterTest {
 
     @Mock
     UserManager mockUserManager;
-    
+
     @Mock
     PasswordValidator mockValidator;
 
