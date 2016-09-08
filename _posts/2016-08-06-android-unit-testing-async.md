@@ -7,6 +7,7 @@ post_id: android-unit-testing-async
 ---
 
 ## 问题
+
 今天讲一个我们讨论群里面被问得最多的一个问题：怎么测试异步操作。问题很明显，测试方法跑完了的时候，被测代码可能还没跑完，这就有问题了。比如下面的类：
 
 ```java
@@ -43,7 +44,6 @@ public class RepoModel {
 
     interface RepoCallback {
         void onSuccess(List<Repo> repos);
-
         void onFailure(int code, String msg);
     }
 }
@@ -126,7 +126,7 @@ public class RepoModelTest {
 ```
 `CountDownLatch`的工作原理类似于倒序计数，刚开始设定了一个数字，每次`countDown()`这个数字减一，`await()`方法会一直等待，直到这个数字为0。`await()`还有一个重载方法，可以用来指定你要等待多久，因为很多时候你不想一直等下去。你想等待一会，如果没等到，那就做别的事情。这种时候你就可以使用这个重载方法：
 
-```
+```java
 //等待2秒钟，如果2秒以后，计数是0了，则返回True，否则返回False。
 latch.await(2, TimeUnit.SECONDS);
 ```
@@ -135,16 +135,19 @@ latch.await(2, TimeUnit.SECONDS);
 此外，`CountDownLatch`还有一个缺点，那就是写起来有点罗嗦，创建对象、调用`countDown()`、调用`await()`都必须手动写，而且还没有通用性，你没有办法抽出一个类或方法来简化代码。
 
 ## 思路2，将异步变成同步
+
 将异步变成同步也是解决异步代码测试问题的一种比较直观的思路。使用这种思路的主要手段是依赖注入，但是根据实现异步的方式不同，也有一些其它的手段。下面介绍几种常见的异步实现，以及相应的单元测试的方法。
 
 ### 直接new Thread的情况
+
 呃，如果你直接在正式代码里面`new Thread()`来做异步，那么你的代码是没有办法变成同步的，换成`Executor`这种方式来做吧。
 
 ### Executor或ExecutorService的情况
+
 如果你的代码是通过`Executor`或`ExecutorService`来做异步的，那在测试中把异步变成同步的做法，跟在测试中使用mock对象的方法是一样的，那就是使用依赖注入。在测试代码里面将同步的`Executor`注入进去。创建同步的`Executor`对象很简单，以下就是一个同步的`Executor`：
 
-```
-Executor immediateExecutor = new Executor() {
+```java
+Executor executor = new Executor() {
     @Override
     public void execute(Runnable command) {
         command.run();
@@ -154,10 +157,12 @@ Executor immediateExecutor = new Executor() {
 当然，你可以使用一个辅助的factory方法来做这件事情。至于怎么样将这个同步的`Executor`在测试里面替换掉真实异步的那个`Executor`，就是依赖注入的问题了。具体的做法请参见系列[第5篇：依赖注入，将mock方便的用起来](http://chriszou.com/2016/05/06/android-unit-testing-di.html)，如果你使用了Dagger2的话，请看[第六篇：使用dagger2来做依赖注入，以及在单元测试中的应用](http://chriszou.com/2016/05/10/android-unit-testing-di-dagger.html)。
 
 ### AsyncTask
+
 笔者建议是不要使用`AsyncTask`，这个东西有很多问题，其中之一是它的行为是很难预测的，之二是如果你在`Activity`里面使用的话，其实这部分代码往往是不应该放在`Activity`里面的。  
 不过，如果你实在需要使用`AsyncTask`，同时又想对这些代码作单元测试的话，建议是使用 `AsyncTask#executeOnExecutor()`而不是直接使用`AsyncTask#execute()`，然后通过依赖注入的方式，在测试环境下将同步的`Executor`注入进去。
 
 ### RxJava
+
 这个是不得不提的一种方法，随着越来越多的人使用RxJava来做异步操作，RxJava代码的单元测试也是经常被问到的一个问题。通常，我们是用下面的方式来使用RxJava的。
 
 ```java
@@ -240,6 +245,7 @@ RxAndroidPlugins.getInstance().registerSchedulersHook(new RxAndroidSchedulersHoo
 来让`AndroidSchedulers.mainThread()`返回当前线程，这样，如果其它地方没有用到Android的类，我们就可以摆脱Robolectric了。这种方式的好处是你可以不用对你的正式代码作依赖注入处理，同时是通用的，你可以在`@Before`里面或其它地方作一次性的初始化，然后这个测试类的所有测试方法都可以使用相同的效果。
 
 ## 小结
+
 本文介绍了几种异步代码的单元测试方法，实际上，在Android上实现异步当然不止这几种方式，还有`ThreadHandler`、`IntentService`、`Loader`等方式，但是笔者对于这些方式使用得较少，因此一时想不出很好的解释方式，但是思想应该都是一样的，那就是要么想办法等待异步线程结束，要么把异步变成同步。  
 文中的代码在[github的这个repo](https://github.com/ChrisZou/android-unit-testing-tutorial)。  
 希望本文能帮助到你。
