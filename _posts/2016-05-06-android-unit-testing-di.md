@@ -21,7 +21,7 @@ public class LoginPresenter {
 
 在测试`LoginPresenter#login()`时，为了能够将mock出来的`UserManager` set到`LoginPresenter`里面，我们前面的做法是简单粗暴，给`LoginPresenter`加一个`UserManager`的setter。然而这种做法毕竟不是很优雅，一般来说，我们正式代码里面是不会去调用这个setter，修改`UserManager`这个对象的。因此这个setter存在的意义就纯粹是为了方便测试。这个虽然不是没有必要，却不是太好看，因此在有选择的情况下，我们不这么做。在这里，我们介绍依赖注入这种模式。
 
-对于依赖注入（Dependency Injection，以下简称DI）的准确定义可以在[这里](https://en.wikipedia.org/wiki/Dependency_injection)找到。它的基本理念这边简单描述下，首先这是一种代码模式，这个模式里面有两个概念：Client和Dependency。假如你的代码里面，一个类用到了另外一个类，那么前者叫Client，后者叫Dependency。结合上面的例子，`LoginPresenter`用到了`UserManager`，那么`LoginPresenter`叫Client，`UserManager`叫Dependency。当然，这是个相对的概念，一个类可以是某个类的Dependency，却是另外一个类的Client。比如说如果`UserManager`里面用到了`Retrofit`，那么相对于`Retrofit`，`UserManager`又是Dependency。DI的基本思想就是，对于Dependency的创建过程，并不在Client里面进行，而是由外部创建好，然后通过某种方式set到Client里面。这种模式，就叫做依赖注入。
+对于依赖注入（Dependency Injection，以下简称DI）的准确定义可以在[这里](https://en.wikipedia.org/wiki/Dependency_injection)找到。它的基本理念这边简单描述下，首先这是一种代码模式，这个模式里面有两个概念：Client和Dependency。假如你的代码里面，一个类用到了另外一个类，那么前者叫Client，后者叫Dependency。结合上面的例子，`LoginPresenter`用到了`UserManager`，那么`LoginPresenter`叫Client，`UserManager`叫Dependency。当然，这是个相对的概念，一个类可以是某个类的Dependency，却是另外一个类的Client。比如说如果`UserManager`里面用到了`Retrofit`，那么相对于`Retrofit`，`UserManager`又是Client。DI的基本思想就是，对于Dependency的创建过程，并不在Client里面进行，而是由外部创建好，然后通过某种方式set到Client里面。这种模式，就叫做依赖注入。
 
 是的，依赖注入就是这么简单的一个概念，这边需要澄清的一点是，这个概念本身跟dagger2啊，RoboGuice这些框架并没有什么关系。现在很多介绍DI的文章往往跟dagger2是在一起的，因为dagger2的使用相对来说不是很直观，所以导致很多人认为DI是多么复杂的东西，甚至认为只能用dagger等框架来实现依赖注入，其实不是这样的。实现依赖注入很简单，dagger这些框架只是让这种实现变得**更加**简单，简洁，优雅而已。
 
