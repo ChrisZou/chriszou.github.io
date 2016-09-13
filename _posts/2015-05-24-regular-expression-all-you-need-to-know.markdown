@@ -30,6 +30,7 @@ A character class is a set of characters inside a square bracket “[]”: `[abc
 A character class matches any **single** characters consists of it. So `/[abcdefg]/` matches any single characters among ‘a’, ‘b’, ‘c’, ..., ‘g’.    
 You can use ‘-‘ to define a range for a  character class: [a-g], [a-z], [A-Z], [0-9], etc.    
 Some  character classes are so commonly used that they made some *shortcuts* for them:    
+.  <=> any character
 \s <=> any space character, including ‘ ‘, tab and newline character.      
 \S <=> any character expect space character(‘ ‘, tab and newline character)    
 \w <=> any *word character*: a-z, A-Z, 0-9, and ‘\_’ Some programming languages limit you to define variable or method names using these characters, and this is why(or the result?).    
