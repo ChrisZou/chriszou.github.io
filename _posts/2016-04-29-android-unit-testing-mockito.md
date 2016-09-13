@@ -84,7 +84,7 @@ public class LoginPresenterTest {
 }
 ```
 
-然而我们要验证的是`LoginPresenter`里面的`mUserManager`这个对象，但是现在我们没有办法获得这个对象，因为`mUserManager`是private的，怎么办？先不想太多，我们简单除暴点，给`LoginPresenter`加一个getter，稍后你会明白我现在为什么做这样的决定。
+然而我们要验证的是`LoginPresenter`里面的`mUserManager`这个对象，但是现在我们没有办法获得这个对象，因为`mUserManager`是private的，怎么办？先不想太多，我们简单粗暴点，给`LoginPresenter`加一个getter，稍后你会明白我现在为什么做这样的决定。
 
 ```java
 public class LoginPresenter {
