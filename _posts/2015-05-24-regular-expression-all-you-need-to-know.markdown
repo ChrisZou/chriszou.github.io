@@ -6,7 +6,7 @@ categories: regular expression, ruby
 comments: true  
 tags: [regex, ruby]
 ---  
-Regular expressions are nuts. You spent lots of time studying them and later when you need to write one, you came up with nothing. That’s why you need a cheatsheet, like this one.  
+Regular expressions are nuts. You have spent lots of time studying them and later when you actually need to write one, you come up with nothing. That’s why you need a cheatsheet, like this one.  
 
 ## Abbreviations used in this post  
 
