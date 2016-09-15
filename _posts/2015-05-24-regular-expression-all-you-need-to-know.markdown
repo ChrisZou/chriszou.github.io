@@ -75,8 +75,8 @@ Groups are used for two purpose.
 
 Normally, the repetition characters are applied to the single character in front of it.  
 `/hello*/`  will match “hell”, “hello”, “helloo”, ....  
-the \* is applied to the “o” only. How can you specify the repetition to be applied to the whole word “hello”? That where groups comes in:  
-`/(hello)*/`  will match “hello”, “helloholle”, “hellohellohello”, ...  
+the \* is applied to the character “o” only. How can you specify the repetition to be applied to the whole word “hello”? That's where groups comes in:  
+`/(hello)*/`  will match “hello”, “hellohello”, “hellohellohello”, ...  
 Another example to use group to define a unit is when using the “|” operator.  
 We can use “|” as “or” in regular expression. For example, I want to match the word “Captain” or “Natasha”. Then I can write the regular expression as:  
 `/Captain|Natasha/`  
