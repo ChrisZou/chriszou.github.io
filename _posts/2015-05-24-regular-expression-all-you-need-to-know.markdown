@@ -60,7 +60,7 @@ The difference between \A(\Z) and ^($)? Well, a string may contain several lines
 
 \*  &nbsp; &nbsp; &nbsp; any times, zero times or more.  
 \+  &nbsp; &nbsp; &nbsp; one time or more  
-?   &nbsp; &nbsp; &nbsp; zero or more times.  
+?   &nbsp; &nbsp; &nbsp; zero or one time  
 {m, n}   &nbsp; &nbsp; &nbsp;at lease m times and at least n times  
 {m, }    &nbsp; &nbsp; &nbsp;at lease m times  
 {,n}  &nbsp; &nbsp; &nbsp; at most n times.  
