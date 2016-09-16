@@ -26,6 +26,7 @@ end
 ```
 
 ### 3. Define factory
+In `spec/factories.rb` or `test/factories.rb`
 
 ```
 FactoryGirl.define do
