@@ -1,12 +1,10 @@
 ---
 layout: post
-title: what is single purpose
+title: '什么叫"功能单一"'
 date: 2016-09-22T22:25:09+08:00
 comments: true
 post_id: what-is-single-purpose
 ---
-
-# 什么叫"功能单一"
 
 昨天开始看《Build Awesome Command-Line Applications in Ruby 2》这本书，看完第一章。其中提到一个Awesome的Command，应该是功能单一（single-purpose）的，但是具体什么叫功能单一呢？为了解释这个问题，书中举了两个反例，来解释什么不是功能单一。  
 第一个例子是一个备份数据库的脚本。其中需要备份的数据库有两个，这个脚本一次性把两个脚本都备份了，脚本大概是这么写的：
