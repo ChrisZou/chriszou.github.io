@@ -51,14 +51,14 @@ password = ARGV[2]
 
 使用的时候：
 
-```shell
+```
 ./db_backup.rb database1 user1 password1
 ./db_backup.rb database2 user2 password2
 ```
 
 如果需要再备份一个数据库，只需要再加一条命令就好了：
 
-```shell
+```
 ./db_backup.rb database1 user1 password1
 ./db_backup.rb database2 user2 password2
 ./db_backup.rb database3 user3 password3
@@ -68,7 +68,7 @@ password = ARGV[2]
 
 第二个例子，是一个命令行下的todo list 工具。这个工具有add task、complete task、list tasks三个功能。然后是这样设计的，第一个功能都有一个对应的脚本，即：
 
-```shell
+```
 # 添加一个任务
 ./add_task.rb 'finish this post'
 
@@ -82,7 +82,7 @@ password = ARGV[2]
 这三种脚本共用一个"tasks.txt"文本文件，作为task数据存储。这个设计也不好，一是这三个脚本共用一个"tasks.txt"，那么他们之间必然会需要share很多的logic，试想如果后面想要给task增加一个field，比如tag，那么这三个文件都得多相应的类似的修改。二是脚本太多暴露给用户，用户会疑惑，也记不清这么多脚本的名字。  
 那么解决办法是什么呢？那就是将这些命令组合成一个Command suite，类似于git一样，将很多同一件事的命令归成一个命令，用"子"命令来区别不用的作用：
 
-```shell
+```
 # 添加一个任务
 ./todo new 'finish this post'
 
