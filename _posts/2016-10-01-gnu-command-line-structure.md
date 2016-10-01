@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '一个符合GNU标准的命令行的组成格式'
+title: '标准GNU命令行的格式'
 date: 2016-10-01T14:46:53+08:00
 comments: true
 post_id: gnu-command-line-structure
@@ -41,10 +41,13 @@ ls -l -a -t # -l, -a, -t都是简短形式的Option
 如果一个flag有参数，那么一般简短形式的flag跟它的参数之间由一个空格分开。而完整形式的flag则用一个“=”连接它的参数，如：
 
 ```
-curl -X POST http://www.google.com #POST是-X的参数
-curl --request=POST http://www.google.com #POST是--request的参数。
+curl -X POST http://www.google.com
+#POST是-X的参数
+
+curl --request=POST http://www.google.com
+#POST是--request的参数。
 ```
 
 这里要分清楚的是Option的参数和这整个命令的参数，在上面的例子中，`POST`是Option `-X`（或`--request`）的参数，而`http://www.google.com`则是这整个命令的参数。
 
-对于一个Command Suite（[什么叫Command Suite？](http://chriszou.com/2016/09/22/what-is-single-purpose.html)）来说，option又分为Global Options和Command Option，这两者是不一样的。一个是对整个Command Suite的Option，一个是对于单个子命令的Option。它们甚至可以有相同的名字，含义却不一样，这点我相信应该也是比较好理解的。
+从文章开关的图也可以看到，对于一个Command Suite（[什么叫Command Suite？](http://chriszou.com/2016/09/22/what-is-single-purpose.html)）来说，Option又分为Global Options（`--no-pager`)和Command Option(`-v`)，这两者是不一样的。一个是对整个Command Suite的Option，一个是对于单个子命令的Option。它们甚至可以有相同的名字，含义却不一样，这点我相信应该是比较好理解的，就不细说了。
