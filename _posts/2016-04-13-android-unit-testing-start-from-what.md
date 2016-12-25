@@ -42,7 +42,7 @@ public class CalculatorTest {
 }
 ```
 
-这里的`CalculatorTest`是`Calculator`对应的测试类。而这里的`testAdd()`就是`add()`这个方法对应的测试方法。所以，写单元测试，就是给你的每个类的每个public方法写对于的测试方法。非public方法我们一般是不测试的，虽然可以通过反射等手段去做，但是一般看来，非public方法是这个类的实现细节，我们并不关心，我们只关心某一个public方法的输入、输出。  
+这里的`CalculatorTest`是`Calculator`对应的测试类。而这里的`testAdd()`就是`add()`这个方法对应的测试方法。所以，写单元测试，就是给你的每个类的每个public方法写对应的测试方法。非public方法我们一般是不测试的，虽然可以通过反射等手段去做，但是一般看来，非public方法是这个类的实现细节，我们并不关心，我们只关心某一个public方法的输入、输出。  
 一般来说，一个方法对应的测试方法主要分为3部分，以上面的测试方法为例：
 
 1. setup。一般是new出你要测试的那个类，以及其他一些前提条件的设置：`Calculator calculator = new Calculator();`
