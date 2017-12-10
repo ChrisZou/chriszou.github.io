@@ -1,0 +1,5 @@
+gem 'jekyll'
+gem 'pygments.rb'
+gem 'jekyll-paginate'
+gem 'kramdown'
+gem 'redcarpet'
