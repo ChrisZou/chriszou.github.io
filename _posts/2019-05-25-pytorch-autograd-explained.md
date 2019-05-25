@@ -1,6 +1,6 @@
 ---
 layout: post
-title: pytorch autograd explained
+title: PyTorch Autograd Explained
 date: 2019-05-25T19:49:54+08:00
 comments: true
 post_id: pytorch-autograd-explained
