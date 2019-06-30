@@ -9,6 +9,7 @@ post_id: what-is-readability
 不久之前，我看了一篇文章，大意是Kotlin与Java之间的对比，像这种文章，我一般是直接忽略的，但是那天我还是打开了，然后就看到一个非常吃惊的结果。
 里面有一段是关于Kotlin与Java之间可读性的对比的文章，作者的结论是：Kotlin并不比Java更具有可读性，所有认为Kotlin 比Java更具有可读性的结论都是“主观性”的。
 并且作者举了一个在我看来，不知道该怎么来描述的例子：
+
 ![](http://blogs-1252789080.file.myqcloud.com/the_stupidest_readability_example.jpg)
 
 这个作者的大意是，上面这段文章，你多读个两三遍，你也会很快的理解它的意思，所以“对于熟练的读者而言，外观很少会成为可读性的障碍。”
