@@ -1,6 +1,0 @@
-I"&<h3 id="junit-rule是什么">JUnit Rule是什么</h3>
-<p>一个JUnit Rule就是一个实现了<code>TestRule</code>的类，这些类的作用类似于<code>@Before</code>、<code>@After</code>，是用来在每个测试方法的执行前后执行一些代码的一个方法。<br />
-如果你不清楚<code>@Before</code>、<code>@After</code>这些Annotation的意思，Chances are你还不了解Junit的使用，建议先看<a href="http://chriszou.com/2016/04/18/android-unit-testing-junit.html">这篇文章</a>。<br />
-那为什么不直接用这些annotation呢？这是因为它们都只能作用于一个类，如果同一个setup需要在两个类里面同时使用，那么你就要在两个测试类里面定义相同的<code>@Before</code>方法，然后里面写相同的代码，这就造成了代码重复。有的人说你可以用继承啊，首先我想说，我很讨厌继承这个东西，所以如果可以不用继承的话，我就不会用；再次我想说，如果你不讨厌继承的话，从现在开始，你也应该慢慢的讨厌它了。<br />
-此外，JUnit Rule还能做一些<code>@Before</code>这些Annotation做不到的事情，那就是他们可以动态的获取将要运行的测试类、测试方法的信息。这个在接下来的一个例子里面可以看到。</p>
-:ET

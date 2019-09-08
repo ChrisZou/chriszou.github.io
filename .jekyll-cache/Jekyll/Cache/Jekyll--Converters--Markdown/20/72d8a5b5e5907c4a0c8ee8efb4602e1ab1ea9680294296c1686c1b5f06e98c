@@ -1,8 +1,0 @@
-I"%<blockquote>
-  <p>注：</p>
-  <ol>
-    <li>代码中的 //&lt;= 表示新加的、修改的等需要重点关注的代码</li>
-    <li>Class#method表示一个类的instance method，比如 LoginPresenter#login 表示 LoginPresenter的login（非静态）方法。</li>
-  </ol>
-</blockquote>
-:ET

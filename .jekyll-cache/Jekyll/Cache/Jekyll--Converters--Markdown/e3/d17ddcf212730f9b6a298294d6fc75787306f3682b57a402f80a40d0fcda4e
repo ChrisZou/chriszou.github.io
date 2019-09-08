@@ -1,2 +1,0 @@
-I"><p>在<a href="http://chriszou.com/2016/04/29/android-unit-testing-mockito.html">上一篇文章</a>中，我们讲了要将mock出来的dependency真正使用起来，需要在测试环境下通过某种方式set 到用到它的那个对象里面进去，替换掉真实的实现。我们前面举的例子是：</p>
-:ET

@@ -1,3 +1,0 @@
-I"�<p>Otto: No more callbacks
-你要做一个todo app，有一个Activity里面有一个ListView显示你所有的<code>task</code>，你的数据存储在服务器。假设你没采用任何的软件架构（MVC、MVP、MVVM等等），每次app打开的时候，你从服务器把数据load下来，load完了以后，通过callback把数据传给Activity，然后显示到listview里面。代码结构大概是这个样子</p>
-:ET

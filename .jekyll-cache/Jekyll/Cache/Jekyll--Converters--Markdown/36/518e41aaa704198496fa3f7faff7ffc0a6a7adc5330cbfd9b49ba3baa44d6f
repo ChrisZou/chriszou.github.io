@@ -1,2 +1,0 @@
-I"<p>今天讲讲Android上做单元测试的最后一个难点，那就是在JVM上无法调用安卓相关的类，不然的话，会报类似于下的错误： <code>java.lang.RuntimeException: Method isEmpty in android.text.TextUtils not mocked.</code></p>
-:ET

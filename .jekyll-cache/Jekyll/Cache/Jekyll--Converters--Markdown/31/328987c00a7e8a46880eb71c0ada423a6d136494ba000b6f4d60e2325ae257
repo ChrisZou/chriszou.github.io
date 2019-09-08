@@ -1,4 +1,0 @@
-I"-<p>我们知道，深度学习最核心的其中一个步骤，就是求导：根据函数（linear + activation function）求weights相对于loss的导数（还是loss相对于weights的导数？）。然后根据得出的导数，相应的修改weights，让loss最小化。
-各大深度学习框架Tensorflow，Keras，PyTorch都自带有自动求导功能，不需要我们手动算。
-在初步学习PyTorch的时候，看到PyTorch的自动求导过程时，感觉非常的别扭和不直观。我下面举个例子，大家自己感受一下。</p>
-:ET
