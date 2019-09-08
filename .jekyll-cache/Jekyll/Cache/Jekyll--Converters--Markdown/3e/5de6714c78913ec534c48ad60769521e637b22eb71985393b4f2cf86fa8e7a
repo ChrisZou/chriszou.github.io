@@ -1,0 +1,7 @@
+I"<p>这个周末两天一直在看<a href="http://elm-lang.org/">Elm</a>，这是一门函数式编程语言。所谓<a href="https://en.wikipedia.org/wiki/Functional_programming">函数式编程</a>（Functional Programming，FP），跟<a href="https://en.wikipedia.org/wiki/Object-oriented_programming">面向对象编程</a>（Object  Oriented，OO)是同一种类型的概念，是一种编程模式。具体什么叫函数式编程，它有什么特征，有什么优势，这里不作具体解释。只放出一个大胆的预言，就是在未来，尤其是在Server端，将会是函数式编程的天下。<br />
+Anyway，Elm是一门函数式编程语言，它是一门静态的，强类型的语言，目前主要targeting在Web端，因此它有一个compiler可以编译成JS。<br />
+目前，编译成JS的语言已经有非常多了，如<a href="http://coffeescript.org/">CoffeeScript</a>，<a href="https://www.typescriptlang.org/">TypeScript</a>，<a href="http://www.purescript.org/">PureScript</a>等等，甚至很多现有的general purpose语言现在也有了一些工具，用来把它们编译成JS，如Clojure 有<a href="http://clojurescript.org/">ClojureScript</a>，Scala有<a href="https://www.scala-js.org/">Scalajs</a>，Ruby有<a href="http://opalrb.org/">Opal</a>等等等等。<br />
+为什么有这么多的新语言编译成JS，又有这么多工具把其它语言编译成JS呢？这些说白了其实都是想取代JS，这说明一个问题，那就是JS不够好，这个跟JVM上面有这么多语言原因是类似的。<br />
+Elm也是出于同样的原因，它想要发明一种全新的Web语言，用于取代JS。那在这么多语言中，Elm的优势是什么？<br />
+经过这两天的接触，我了解到它的优势有以下几个：</p>
+:ET

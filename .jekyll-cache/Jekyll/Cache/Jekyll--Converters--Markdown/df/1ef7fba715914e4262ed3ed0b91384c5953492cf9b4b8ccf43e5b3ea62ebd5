@@ -1,0 +1,2 @@
+I"�<p>我们每天都在Terminal下面运行很多命令，但是，你了解一条命令的标准格式吗？对于我来说，以前并没怎么关心过，都是拿来就用，不会就google。这几天继续看<a href="https://pragprog.com/book/dccar2/build-awesome-command-line-applications-in-ruby-2">《Build Awesome Command-Line Applications in Ruby 2》</a>，其中讲到了GNU规定的命令行的格式，看完以后有种恍然大悟的感觉，才发现原来一条命令还有一个标准格式的，有了这个格式，很多东西都不用记了，一个命令用起来就觉得有章可循了，对一个不熟悉的命令，也更容易猜到，或是找到使用的方法。</p>
+:ET

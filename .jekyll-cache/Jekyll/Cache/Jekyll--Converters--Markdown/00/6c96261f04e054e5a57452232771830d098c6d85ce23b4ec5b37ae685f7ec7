@@ -1,0 +1,91 @@
+I"<p>This is currently the most popular solution to serve rails app and is used by many big companies like github, tweet, 37signals and so on. Also, it is very easy to setup in this way.</p>
+
+<h2 id="config-unicorn">Config unicorn</h2>
+
+<h3 id="install-gem-unicorn">Install gem unicorn:</h3>
+<p>Put <code>gem ‘unicorn’</code> in Gemfile
+then <code>bundle install</code></p>
+
+<h3 id="edit-unicorn-config-file">Edit unicorn config file</h3>
+<p>Vim <code>config/unicorn.rb</code> under your rails app root dir.<br />
+content:</p>
+
+<pre><code># The ONLY too things you should change, if you don’t need any specialty.
+app_name = "your_app_name"
+number_of_app_instances = 2
+# Set the working application directory. This should be your rails app root dir, not the public dir
+app_root = File.expand_path(File.dirname(__FILE__) + '/..')
+working_directory app_root
+
+# File to store unicorn pid
+# pid "/path/to/pids/unicorn.pid"
+pid "#{app_root}/tmp/pids/unicorn.pid"
+
+# Path to logs
+# stderr_path "/path/to/log/unicorn.log"
+# stdout_path "/path/to/log/unicorn.log"
+stderr_path "#{app_root}/log/unicorn.log"
+stdout_path "#{app_root}/log/unicorn.log"
+
+# Unicorn socket
+listen "/tmp/unicorn.#{app_name}.sock"
+
+# Number of processes
+worker_processes number_of_app_instances
+
+# Time-out
+timeout 30
+</code></pre>
+
+<h2 id="nginx-config">Nginx config</h2>
+
+<h3 id="install-nginx">Install nginx</h3>
+<pre><code>sudo apt-get update
+sudo apt-get install nginx
+</code></pre>
+<p>Default nginx config file would be located in <code>/etc/nginx</code></p>
+
+<h3 id="nginx-config-file">Nginx config file</h3>
+<p>Add a file in sites_available and put content:</p>
+
+<pre><code>upstream app {
+    # Path to Unicorn SOCK file, as defined previously
+    server unix:/tmp/unicorn.your_app_name.sock fail_timeout=0;
+}
+
+# configure server for your app
+server {
+    listen 80;
+    server_name yourdomain.com www.yourdomain.com;
+    root /path/to/your/rails/root/public;
+
+    location ^~ /assets/ {
+        gzip_static on;
+        expires max;
+        add_header Cache-Control public;
+    }
+
+    try_files $uri @app;
+    location @app {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_pass http://app;
+    }
+}
+</code></pre>
+
+<h3 id="make-a-soft-link-in-sites-enabled-to-the-above-nginx-config-file">Make a soft link in <code>sites-enabled</code> to the above nginx config file</h3>
+
+<h3 id="reload-nginx">Reload nginx</h3>
+<p><code>sudo service nginx restart</code></p>
+
+<h2 id="start-serving">Start serving</h2>
+
+<h3 id="compile-assets-rake-assetsprecompile">Compile assets: rake assets:precompile</h3>
+<p>If you only want to server your app in development environment, you don’t need this step.</p>
+
+<h3 id="start-unicorn-in-production">Start unicorn in production</h3>
+<p><code>bundle exec unicorn -c config/unicorn.rb -D -E production</code><br />
+If you want to run in development mode, just remove the <code>-E production</code>. If you don’t want to run in deamon, just remove the <code>-D</code>.</p>
+:ET

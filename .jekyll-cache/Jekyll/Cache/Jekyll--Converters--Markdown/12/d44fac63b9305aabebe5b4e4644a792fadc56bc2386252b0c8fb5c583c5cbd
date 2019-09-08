@@ -1,0 +1,3 @@
+I"�<h2 id="the-old-way">The Old Way</h2>
+<p>我们在系列的第六篇文章前面介绍了<a href="http://chriszou.com/2016/05/10/android-unit-testing-di-dagger.html">Dagger2在单元测试里面的使用姿势</a>。大致过程是这样的，首先，你要mock出一个Module，让它的某个Provider方法在被调用的时候，返回你想到的mock的Dependency。然后使用这个mock的module来build出一个Component，再把这个Component放到你的<code>ComponentHolder</code>。举个例子说明一下，假设你有一个<code>LoginActivity</code>，里面有一个<code>LoginPresenter</code>，是通过Dagger2 inject进去的，如下：</p>
+:ET

@@ -1,0 +1,87 @@
+I"�<p>前几天开始看Uncle Bob的《Clean Code》，在第一章里，作者讨论了这样的一个问题：什么样的code才是Clean code。对于这个问题，一千个Programmer可能会有一千个答案，所以作者请教了6个著名的专家，问问他们对于这个问题的看法，以下三个是我认为不那么虚的，比较有操作参考意义的回答：</p>
+
+<h4 id="1-bjarne-stroustrup-c之父">1. Bjarne Stroustrup, C++之父</h4>
+
+<blockquote>
+  <p>I like my code to be elegant and efficient. The logic should be straightforward to make it hard for bugs to hide, the dependencies minimal to ease maintenance, error handling complete according to an articulated strategy, and per- formance close to optimal so as not to tempt people to make the code messy with unprinci- pled optimizations. Clean code does one thing well.</p>
+</blockquote>
+
+<p>这里的几个重点是：</p>
+
+<ul>
+  <li>Elegant：意味着你的代码看起来很舒服</li>
+  <li>Efficient：这个可能跟Bjarne Stroustrup的领域有关，毕竟使用C++的地方大多是对效率要求很高的领域。</li>
+  <li>Error handling complete：完备的错误处理机制，这意味着关注细节。</li>
+  <li><strong>Does one thing well</strong>：就是我们所说的，Single Responsibility！</li>
+</ul>
+
+<h4 id="2-dave-thomas-出版公司the-pragmatic-bookshelf-co-founderpragmatic-programmer中文叫程序员修炼之道programming-ruby作者">2. Dave Thomas, 出版公司The Pragmatic Bookshelf Co-founder，《Pragmatic Programmer》（中文叫程序员修炼之道）、《Programming Ruby》作者。</h4>
+
+<blockquote>
+  <p>Clean code can be read, and enhanced by a developer other than its original author. It has unit and acceptance tests. It has meaningful names. It provides one way rather than many ways for doing one thing. It has minimal dependencies, which are explicitly defined, and pro- vides a clear and minimal API. Code should be literate since depending on the language, not all necessary information can be expressed clearly in code alone.</p>
+</blockquote>
+
+<p>这里的几个重点是：</p>
+
+<ul>
+  <li>Can be read and enhanced by others</li>
+  <li><strong>Unit and acceptance tests</strong></li>
+  <li>Meaningful names</li>
+  <li>Minimal dependency, <strong>minimal API</strong></li>
+</ul>
+
+<p>这里的test和Minimal API是我们应该注意的东西，</p>
+
+<h4 id="3-ron-jeffries-extreme-programming-installed-extreme-programming-adventures-in-c的作者">3. Ron Jeffries 《Extreme Programming Installed》 《Extreme Programming Adventures in C#》的作者</h4>
+
+<blockquote>
+  <p>In recent years I begin, and nearly end, with Beck’s rules of simple code. In priority order, simple code:<br />
+• Runs all the tests;<br />
+• Contains no duplication;<br />
+• Expresses all the design ideas that are in the system;<br />
+• Minimizes the number of entities such as classes, methods, functions, and the like.<br />
+… Of these, I focus mostly on duplication. When the same thing is done over and over, it’s a sign that there is an idea in our mind that is not well represented in the code. I try to figure out what it is. Then I try to express that idea more clearly.<br />
+Expressiveness to me includes meaningful names, and I am likely to change the names of things several times before I settle in…. I also look at whether an object or method is doing more than one thing. If it’s an object, it probably needs to be broken into two or more objects. If it’s a method, I will always use the Extract Method refactoring on it, resulting in one method that says more clearly what it does, and some submethods saying how it is done…</p>
+</blockquote>
+
+<p>在这里，Ron Jeffries甚至把test放在第一位。
+至于作者的最后一条：Minimizes the number of entities such as classes, methods, functions, and the like。我认为作者应该是有前提的。不然的话，如果以那个为标准，那么所有的代码都放到一个类，一个方法里面好了，这样明显是不行的。而且作者后面自己也提到，会把一个大的类分成两个小的，会用extract method来分解一个很长的方法。总体来说，应该大多数人都会认同：几个小的类比一个大的类要好，几个小的方法比一个大的方法要好。</p>
+
+<p>下面3个回答相对来说就比较虚了，大家看看就好。</p>
+
+<h4 id="4-grady-booch-object-oriented-analysis-and-design-with-applications作者">4. Grady Booch， 《Object Oriented Analysis and Design with Applications》作者</h4>
+
+<blockquote>
+  <p>Clean code is simple and direct. Clean code reads like well-written prose. Clean code never obscures the designer’s intent but rather is full of crisp abstractions and straightforward lines of control.</p>
+</blockquote>
+
+<p>简单直接，如诗一般， straightforward lines of control，说了等于没说。abstraction，相对来说还是比较实在的。</p>
+
+<h4 id="5-michael-feathers-working-effectively-with-legacy-code作者">5. Michael Feathers, 《Working Effectively with Legacy Code》作者</h4>
+
+<blockquote>
+  <p>I could list all of the qualities that I notice in clean code, but there is one overarching quality that leads to all of them. Clean code always looks like it was written by someone who cares. There is nothing obvious that you can do to make it better. All of those things were thought about by the code’s author, and if you try to imagine improvements, you’re led back to where you are, sitting in appreciation of the code someone left for you—code left by some- one who cares deeply about the craft.</p>
+</blockquote>
+
+<p>这里的重点是Care。但是什么样的代码是被author care过得呢？这里没有明确的指标可以依据，只能靠我们自己去判断。</p>
+
+<h4 id="6-ward-cunningham-wiki发明人fit发明人extreme-programming共同发明人-design-patternsoo思想领袖the-godfather-of-all-those-who-care-about-code">6. Ward Cunningham, Wiki发明人，Fit发明人，eXtreme Programming共同发明人. Design Patterns、OO思想领袖。The godfather of all those who care about code.</h4>
+
+<blockquote>
+  <p>You know you are working on clean code when each routine you read turns out to be pretty much what you expected. You can call it beautiful code when the code also makes it look like the language was made for the problem.</p>
+</blockquote>
+
+<p>“Pretty much what you expected”，但是每个人expect的代码的样子都是不一样的，一个初学者expected的代码的样子可能相对也会比较初级，难道那个也能称作clean code吗？I might have a different opinion.</p>
+
+<p>总结一下，我个人认为以下几点，非常值得我们参考：</p>
+
+<ol>
+  <li>Single Responsibility. 一个类只做它该做的事情，一个方法做一件事。</li>
+  <li>Minimal API：一个类对外暴露的接口应该是尽量少的，其实这也就意味着多用Composition，少用继承，因为继承，意味着这个类继承了父类所有的接口，这跟Minimal API明显是相对的。</li>
+  <li>Unit Test：这不是一件无关紧要的事情，不要说“仅仅是为了测试”这样的话。。。</li>
+  <li>Naming：这也是一件非常重要的事情，类名，方法名，变量名等等，这都是非常影响可读性的。哪怕写起来不大顺手，也需要为了更好的可读性，设计一个更好的接口。为什么？因为<a href="http://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is">读代码的时间比写代码的时间多出10倍不止</a>，这个在书中也有提到，是通过人们对Emacs的使用情况，真实统计出来的。从另外一个角度来讲，代码写出来是一次性的，而之后被阅读的次数却是无法估计的。</li>
+  <li>DRY: <a href="https://www.goodreads.com/work/quotes/18312943-the-robert-c-martin-clean-code-collection-collection">Duplication is the root of all evil in software design</a>.</li>
+</ol>
+
+<p>大家觉得，什么样的代码才是好代码呢？</p>
+:ET

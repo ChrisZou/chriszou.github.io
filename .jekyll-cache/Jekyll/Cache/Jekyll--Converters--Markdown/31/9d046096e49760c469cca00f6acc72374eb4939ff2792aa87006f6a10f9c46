@@ -1,0 +1,2 @@
+I"�<p>如果你使用AndroidStudio经常觉得很卡，那有可能是因为系统给AS分配的内存不够的原因。打开/Applications/Android Studio.app/Contents/bin/studio.vmoptions (Mac)，可以看到有以下配置：</p>
+:ET

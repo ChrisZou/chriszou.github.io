@@ -1,0 +1,112 @@
+I"U<h2 id="特殊符号及其转义">特殊符号及其转义</h2>
+
+<p>我们知道,在一个shell命令是由命令名和它的参数组成的, 比如 <code>cat testfile</code>, 其中<code>cat</code>是命令名, <code>testfile</code>是参数. shell将参数<code>testfile</code>传递给<code>cat</code>命令. 但是, 如果参数中含有特殊字符, 比如说<code>*</code>, <code>*</code>我们知道,是表示任意多个(包括0个)任意字符. 那么shell的工作方式是,它会对这些特殊字符进行预先处理, 然后再将处理的结果传给那个命令.
+比如说,如果你的当前目录有file, file1, file2 三个文件, 那么当你执行<code>cat file*</code>的时候, shell会对参数部分<code>file*</code>进行预先处理, 由于<code>*</code>表示任意多个(包括0个)任意字符,那么处理的结果便是<code>file file1 file2</code>,接下来,shell再将这个结果, 即<code>file file1 file2</code>传递给cat命令, 所以你看到的结果跟直接执行<code>cat file file1 file2</code>是一样的, 那就是三个文件的内容都显示在命令行终端.<br />
+实际上,我们有办法看到shell处理的结果是什么,或者说真正执行的命令是什么样子的, 那就是在你要执行的命令之前加上<code>echo</code>.
+比如说,在上面的目录下,你执行<code>echo cat file*</code>, 那么你将看到</p>
+
+<pre><code>cat file file1, file2
+</code></pre>
+
+<p>上面那条命令,就是经过shell对参数的处理之后,真正执行的命令.<br />
+但是很多时候,我们希望传递给这些命令的,就是这些参数本身, 比如说,你当前目录下有一个文件的文件名就叫<code>test*</code>, 同时还有另外一个文件, <code>test1</code>. 而你只想看<code>test*</code>的内容, 这时候,如果你执行
+<code>cat test*</code>
+的话,那么<code>test*</code>和<code>test1</code>的内容都会被显示出来,这时候怎么办呢? 这里就涉及到特殊字符的转义(escape)的问题了.所谓的转义,意思就是去掉它的特殊含义.让shell把他们当做一般字符对待,不要进行特殊处理.
+在shell中,特殊字符的转义有三种办法</p>
+
+<ol>
+  <li>用<code>\</code>转义: 把<code>\</code>字符放在特殊字符的前面</li>
+  <li>用单引号(‘‘)转义: 用单引号把参数括起来</li>
+  <li>用双引号(““)转义: 用双引号把参数括起来</li>
+</ol>
+
+<p>在上面的例子中,这三种方法都是有效率的,也就是说,下面的三个命令都能达到目的:</p>
+
+<ol>
+  <li><code>cat test\*</code></li>
+  <li><code>cat 'test*'</code></li>
+  <li><code>cat “test*”</code></li>
+</ol>
+
+<h2 id="三种转义方法的范围">三种转义方法的范围</h2>
+
+<p>在shell中,特殊字符是非常多的,而以上提到的三种转义方法的范围也不尽相同,其中第一种方法的范围是最广的,几乎可以对所有的特殊字符进行转义,常见的用法是把<code>\</code>放在一个命令行的最后,这样一个很长的命令就可以分为两行或者更多行写. 比如</p>
+
+<pre><code>echo this is a \
+very long \
+line
+</code></pre>
+
+<p>将显示成</p>
+
+<pre><code>this is a very long line
+</code></pre>
+
+<p>在这里,其实就是<code>\</code>把换行符转义了,让它失去了换行的意思,同时阻止命令立刻执行.<br />
+第二种转义(单引号)的范围比第一种小,它可以阻止命令行立刻执行,但是它不能让换行符失去换行的意思. 所以</p>
+
+<pre><code>echo 'hello
+world'
+</code></pre>
+
+<p>将显示成</p>
+
+<pre><code>hello
+world
+</code></pre>
+
+<p>第三种转义(双引号)的范围又比第二种小,单引号可以转义”`”, 而双引号不行. 在shell中, “`“中间的东西将被视为命令替换. shell对参数进行预先处理时,将把两个”`“中间的东西当做shell命令进行执行,再将执行结果替换掉他们本身. 举个例子:</p>
+
+<pre><code>echo today is `date`
+</code></pre>
+
+<p>将显示</p>
+
+<pre><code>today is Mon Oct 12 16:14:16 CST 2015
+</code></pre>
+
+<p>当然,具体的日期跟你执行这条命令的时期有关. 总之,意思你应该明白了. 再回到原来的问题,我们说单引号可以转义”`”, 而双引号不行, 意思就是,单引号之间的”`“将失去它的特殊含义,而双引号之间的”`“将依然有特殊含义,所以</p>
+
+<pre><code>echo 'today is `date`'
+</code></pre>
+
+<p>将显示</p>
+
+<pre><code>today is `date`
+</code></pre>
+
+<p>而</p>
+
+<pre><code>echo “today is `date`”
+</code></pre>
+
+<p>将显示</p>
+
+<pre><code>today is Mon Oct 12 16:23:23 CST 2015
+</code></pre>
+
+<h2 id="常见的一些特殊字符">常见的一些特殊字符</h2>
+
+<p><code>*</code>			任意个任意字符<br />
+<code>?</code>			一个任意字符<br />
+<code>[..]</code>		<code>[]</code>中的任意一个字符,这里也类似于正则表达式,中括号内可以是具体的一些字符,如<code>[abcd]</code>也可以是用<code>-</code>指定的一个范围,如<code>[a-d]</code><br />
+<code>#</code>              注释<br />
+` <code>(空格)  	参数分隔符  
+</code>cmd<code>		命令替换  
+</code>|<code>			管道  
+</code>&amp;<code>			后台执行  
+</code>;<code>			命令分隔符(可以在同一行执行两个命令,用</code>;<code>分割)  
+</code>~`			用户home目录</p>
+
+<p>最后记得,<strong>任何时候,你不确定自己是不是转义对了,或者是特殊字符用对了,记得可以在命令前面加上<code>echo</code>,来看看真实执行的命令是怎么样的</strong>.</p>
+
+<p>本文参考文档: http://www.grymoire.com/Unix/Quote.html</p>
+
+<p>有任何意见或建议，或者发现文中任何问题，欢迎留言！</p>
+
+<p>更多文章请访问<a href="http://chriszou.com/">个人博客</a><br />
+作者：<a href="http://chriszou.com/">邹小创</a><br />
+<a href="https://github.com/ChrisZou">Github</a><br />
+<a href="http://weibo.com/happystriving">微博</a><br />
+邮件：happystriving@126.com</p>
+:ET

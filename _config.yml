@@ -2,7 +2,7 @@ name: 小创作
 description: '书写是一种创作，分享是一种美德'
 meta_description: "小创作 关于技术和生活的思考"
 
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
   extensions: ["tables"]
 highlighter: pygments
