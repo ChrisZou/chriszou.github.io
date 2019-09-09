@@ -42,11 +42,8 @@ psql (PostgreSQL) 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1)
 原来，`psql --version` 显示的是psql client的版本号，psql server的版本号跟这个不一定是一样的。按照SO那位盆友的回答，登录psql shell，执行 `SHOW server_version;`，就可以看得很清楚了：
 
 ```
-psql -U xxx
-Password for user xxx:
-psql (10.6 (Ubuntu 10.6-0ubuntu0.18.04.1), server 9.1.24)
-SSL connection (protocol: ***, cipher: ***, bits: ***, compression: ***)
-Type "help" for help.
+$ psql -U xxx
+...
 xxx=# SHOW server_version;
  server_version
 ----------------
