@@ -52,7 +52,7 @@ xxx=# SHOW server_version;
 ```
 
 可以看到，我的psql server版本号其实是9.1.24。并不是我以为的10.6。  
-后来我发现，实际上，每次登录psql shell，它都会提示版本号信息：
+后来我发现，实际上，你每次登录psql shell，它都会提示你版本号信息：
 
 ```
 psql -U xxx
