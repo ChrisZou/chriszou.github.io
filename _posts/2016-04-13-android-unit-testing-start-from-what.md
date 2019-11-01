@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "Android单元测试: 首先，从是什么开始"
+title: 'Android单元测试: 首先，从是什么开始'
 date: 2016-04-13T08:24:43+08:00
 comments: true
 post_id: android-unit-testing-start-from-what
 ---
 
-这是一系列安卓单元测试的文章，目测主要会cover以下的主题：
+![approximate1](/images/unittest-start-from-what/you-need-some-tests.webp)
+这是一系列安卓单元测试的文章，目测主要会 cover 以下的主题：
 
 1. 什么是单元测试
 2. 为什么要做单元测试
@@ -55,39 +56,41 @@ public class CalculatorTest {
 
 我们知道，在一个android gradle project中，源代码默认是放在src/main/java下面的。而对应的单元测试代码则是放在src/test/java下面的，如下图所示：
 
-![ut src position](http://7xod3k.com1.z0.glb.clouddn.com/ykszhwpverjpiwlnutkgssuztopwhkoo)
+![ut src position](/images/unittest-start-from-what/unittest-location.webp)
 
 其中的package name可以随意定，很多人喜欢跟src package name保持一致，我个人习惯在最后加上.test后缀，因为AndroidStudio太智能了，经常我需要重命名单元测试的package的时候，AndroidStudio会把src的package也给重命名了。  
 打开`CalculatorTest`，用鼠标右键点击`testAdd()`方法，选择Run testAdd(), 如下图所示：
 
-![](http://7xod3k.com1.z0.glb.clouddn.com/wcnytvwnygfojzjowhigubdmzrbbrjix)
+![](/images/unittest-start-from-what/run-testadd.webp)
 
 从图中你可以看出，你可以按快捷键`Ctrl+Shift+R`快速运行，当然，这要求你的光标当前焦点是在这个方法内部的。如果你的焦点是在类内部，而不在某一个测试方法内部，那么`Ctrl+Shift+R`将运行这个测试类的所有测试方法。当然，你也可以通过右键点击测试类名来运行这个测试类里面的所有测试方法。  
 运行结束以后，你会在底部的“Run”这个tab看到运行的结果，如下图所示：
 
-![](http://7xod3k.com1.z0.glb.clouddn.com/kpscjaojwbuhmyiciefsyhwfccuialkz)
+![](/images/unittest-start-from-what/unittest-result.webp)
 
-除了在AndroidStudio里面运行，你还可以在命令行通过`gradle testDebugUnitTest`，或者是`gradle testReleaseUnitTest`，分别运行debug和release版本的unit testing，这种方式可以一次性运行所有测试类的所有测试方法。 这种方式的运行结果如下图所示：
+除了在 AndroidStudio 里面运行，你还可以在命令行通过`gradle testDebugUnitTest`，或者是`gradle testReleaseUnitTest`，分别运行 debug 和 release 版本的 unit testing，这种方式可以一次性运行所有测试类的所有测试方法。 这种方式的运行结果如下图所示：
 
-![](http://7xod3k.com1.z0.glb.clouddn.com/hfdcufppwnpkuhuxaqowjrcigdszmmiv)
+![](/images/unittest-start-from-what/unittest-result-in-terminal.webp)
 
-每个test case的报告可以在project_root/app/build/reports/tests/debug/index.html 这个xml里面看到。大致如下图：
+每个 test case 的报告可以在 project_root/app/build/reports/tests/debug/index.html 这个 xml 里面看到。大致如下图：
 
-![](http://7xod3k.com1.z0.glb.clouddn.com/rbmvgkjgfnxyjbzktnsgwgkzwncduhut)
+![](/images/unittest-start-from-what/unittest-report.webp)
 
 ## 单元测试不是集成测试
-这里需要强调一个观念，那就是单元测试只是测试一个方法单元，它不是测试一整个流程。举个例子来说，一个Login页面，上面有两个输入框和一个button。两个输入框分别用于输入用户名和密码。点击button以后，有一个`UserManager`会去执行`performlogin`操作，然后将结果返回，更新页面。  
-那么我们给这个东西做单元测试的时候，不是测这一整个login流程。这种整个流程的测试：给两个输入框设置正确的用户名和密码，点击login button, 最后页面得到更新。叫做集成测试，而不是单元测试。当然，集成测试也是有他的必要性的，然而这不是我们每个程序员应该花多少精力所在的地方。在这方面，有一个理论叫做[Test Pyramid](http://martinfowler.com/bliki/TestPyramid.html)，如下图所示：
 
-![](http://7xod3k.com1.z0.glb.clouddn.com/qtijqabixtlihxsuujkwnlzelrqnwqnz)
+这里需要强调一个观念，那就是单元测试只是测试一个方法单元，它不是测试一整个流程。举个例子来说，一个 Login 页面，上面有两个输入框和一个 button。两个输入框分别用于输入用户名和密码。点击 button 以后，有一个`UserManager`会去执行`performlogin`操作，然后将结果返回，更新页面。  
+那么我们给这个东西做单元测试的时候，不是测这一整个 login 流程。这种整个流程的测试：给两个输入框设置正确的用户名和密码，点击 login button, 最后页面得到更新。叫做集成测试，而不是单元测试。当然，集成测试也是有他的必要性的，然而这不是我们每个程序员应该花多少精力所在的地方。在这方面，有一个理论叫做[Test Pyramid](http://martinfowler.com/bliki/TestPyramid.html)，如下图所示：
 
-Test Pyramid理论基本大意是，单元测试是基础，是我们应该花绝大多数时间去写的部分，而集成测试等应该是冰山上面能看见的那一小部分。  
-为什么是这样呢？因为集成测试设置起来很麻烦，运行起来很慢，发现的bug少，在保证代码质量、改善代码设计方面更起不到任何作用，因此它的重要程度并不是那么高，也无法将它纳入我们正常的工作流程中。  
-而单元测试则刚好相反，它运行速度超快，能发现的bug更多，在开发时能引导更好的代码设计，在重构时能保证重构的正确性，因此它能保证我们的代码在一个比较高的质量水平上。同时因为运行速度快，我们很容易把它纳入到我们正常的开发流程中。  
-至于为什么集成测试发现的bug少，而单元测试发现的bug多，这里也稍作解释，因为集成测试不能测试到其中每个环节的每个方面，某一个集成测试运行正确了，不代表另一个集成测试也能运行正确。而单元测试会比较完整的测试每个单元的各种不同的状况、临界条件等等。一般来说，如果每一个环节是对的，那么在很大的概率上，整个流程就是对的。虽然不能保证整个流程100%一定是对的。所以，集成测试需要有，但应该是少量，单元测试是我们应该花重点去做的事情。  
+![](/images/unittest-start-from-what/test-pyramid.webp)
+
+Test Pyramid 理论基本大意是，单元测试是基础，是我们应该花绝大多数时间去写的部分，而集成测试等应该是冰山上面能看见的那一小部分。  
+为什么是这样呢？因为集成测试设置起来很麻烦，运行起来很慢，发现的 bug 少，在保证代码质量、改善代码设计方面更起不到任何作用，因此它的重要程度并不是那么高，也无法将它纳入我们正常的工作流程中。  
+而单元测试则刚好相反，它运行速度超快，能发现的 bug 更多，在开发时能引导更好的代码设计，在重构时能保证重构的正确性，因此它能保证我们的代码在一个比较高的质量水平上。同时因为运行速度快，我们很容易把它纳入到我们正常的开发流程中。  
+至于为什么集成测试发现的 bug 少，而单元测试发现的 bug 多，这里也稍作解释，因为集成测试不能测试到其中每个环节的每个方面，某一个集成测试运行正确了，不代表另一个集成测试也能运行正确。而单元测试会比较完整的测试每个单元的各种不同的状况、临界条件等等。一般来说，如果每一个环节是对的，那么在很大的概率上，整个流程就是对的。虽然不能保证整个流程 100%一定是对的。所以，集成测试需要有，但应该是少量，单元测试是我们应该花重点去做的事情。  
 那对于这个例子，单元测试是怎么样的呢？这个请看下一小节。
 
 ## 两种函数（方法），两种不同的测试方式
+
 一个类的方法可以分为两种，一种是有返回值的，另一种是没有返回值的。对于有返回值的方法，我们要测起来比较容易，就跟上面的`Calculator`例子那样，输入相应的参数，得到相应的返回值，然后验证得到的返回值跟我们预期的值一样，就好了。  
 但是没有返回值的方法，要怎么测试呢？比如说刚刚login的例子，点击那个按钮，会执行Activity的`login()`方法，它的定义如下：
 
