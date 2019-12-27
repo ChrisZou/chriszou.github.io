@@ -2,6 +2,4 @@ _site
 .DS_Store
 *.swp
 .sass-cache
-Gemfile
-Gemfile.lock
 .jekyll-cache/
