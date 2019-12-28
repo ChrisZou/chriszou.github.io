@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Ruby 2.7.0 上手体验以及问题记录
-date: 2019-12-27T14:43:34+08:00
+date: 2019-12-28T14:40:34+08:00
 comments: true
-post_id: ruby-2.7.0-trying-out
+post_id: trying-out-ruby-2.7.0
 ---
 
 正如过去的每个版本一样，Ruby 最新大版本 2.7.0 在圣诞节那一天正式发布了。空下来以后，我第一时间开始使用了。因为里面有一个我期待已久的新功能，那就是 block default parameters。
