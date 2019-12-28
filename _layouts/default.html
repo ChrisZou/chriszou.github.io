@@ -36,6 +36,9 @@
     </div>
   </head>
   <body class="{% if page.post_class %}{{ page.post_class }}{% else %}home-template{% endif %}">
+    <!-- 分享到微信朋友圈用的图标 -->
+    <div id="wx_logo" style="margin:0 auto;display:none;"><img src="/image/avatar300.png" /></div>
+
     {{ content }}
 
     <!-- CNZZ statistics -->
@@ -49,10 +52,10 @@
         )
       )
     </script>
+    <!-- CNZZ statistics END-->
+
     <footer class="site-footer clearfix">
-      <section class="copyright">
-        <a href="{{ site.baseurl }}">{{ site.name }}</a> &copy; {{ 'now' | date: '%Y' }} &bull; All rights reserved.
-      </section>
+      <section class="copyright"><a href="{{ site.baseurl }}">{{ site.name }}</a> &copy; {{ 'now' | date: '%Y' }} &bull; All rights reserved.</section>
       <section class="poweredby">
         Made with Jekyll using
         <a href="http://github.com/rosario/kasper">Kasper theme</a>
