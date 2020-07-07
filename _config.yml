@@ -17,3 +17,5 @@ url:            'http://chriszou.com'
 author:         '小创'
 
 plugins: [jekyll-paginate, jekyll-feed]
+feed:
+  posts_limit: 55
