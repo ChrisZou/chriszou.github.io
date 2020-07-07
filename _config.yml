@@ -16,4 +16,4 @@ enable_sharing: false
 url:            'http://chriszou.com'
 author:         '小创'
 
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate, jekyll-feed]
