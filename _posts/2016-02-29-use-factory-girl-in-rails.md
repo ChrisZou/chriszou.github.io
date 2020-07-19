@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use FactoryGirl in Rails"
-date: 2016-02-29T06:57:43+08:00
+date: "2016-02-29T06:57:43+08:00"
 comments: true
 post_id: use-factory-girl-in-rails
 ---

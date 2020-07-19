@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '《Working Effectively with Legacy Code》阅读分享(一)'
-date: 2016-06-13T07:56:01+08:00
+date: "2016-06-13T07:56:01+08:00"
 comments: true
 post_id: working-effectively-with-legacy-code-reading-1
 ---

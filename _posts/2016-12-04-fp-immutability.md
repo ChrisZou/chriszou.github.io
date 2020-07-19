@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '函数式编程的那些特性(一): Immutability'
-date: 2016-12-04T18:59:32+08:00
+date: "2016-12-04T18:59:32+08:00"
 comments: true
 post_id: fp-immutability
 ---

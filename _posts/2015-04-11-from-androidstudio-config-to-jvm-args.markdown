@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  从AndroidStudio的启动参数开始，了解一下JVM的一些东西（内存使用，JIT等）
-date: 2015-04-11 06:15:07 UTC
+date: "2015-04-11 06:15:07 UTC"
 tags: [tech, java, android]
 comments: true
 ---

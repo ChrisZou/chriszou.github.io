@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "博客换回Jekyll，顺带简介一下Jekyll"
-date:   2015-05-01 15:21
+date:   "2015-05-01 15:21"
 tags: [life]
 comments: true
 ---

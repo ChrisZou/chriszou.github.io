@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Android单元测试(三)：JUnit单元测试框架的使用'
-date: 2016-04-18T08:30:34+08:00
+date: "2016-04-18T08:30:34+08:00"
 comments: true
 post_id: android-unit-testing-junit
 ---

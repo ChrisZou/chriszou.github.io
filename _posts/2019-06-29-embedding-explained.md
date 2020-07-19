@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 我对Embedding的理解
-date: 2019-06-29T18:51:44+08:00
+date: "2019-06-29T18:51:44+08:00"
 comments: true
 post_id: embedding-explained
 ---

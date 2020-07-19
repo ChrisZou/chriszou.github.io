@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '关于安卓单元测试，你需要知道的一切'
-date: 2016-06-07T08:15:53+08:00
+date: "2016-06-07T08:15:53+08:00"
 comments: true
 post_id: android-unit-testing-everything-you-need-to-know
 ---

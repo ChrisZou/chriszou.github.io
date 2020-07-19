@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '什么叫"功能单一"'
-date: 2016-09-22T22:25:09+08:00
+date: "2016-09-22T22:25:09+08:00"
 comments: true
 post_id: what-is-single-purpose
 ---

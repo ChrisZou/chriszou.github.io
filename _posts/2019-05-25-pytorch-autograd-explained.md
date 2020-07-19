@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PyTorch自动求导（Autograd）原理解析
-date: 2019-05-25T19:49:54+08:00
+date: "2019-05-25T19:49:54+08:00"
 comments: true
 post_id: pytorch-autograd-explained
 ---

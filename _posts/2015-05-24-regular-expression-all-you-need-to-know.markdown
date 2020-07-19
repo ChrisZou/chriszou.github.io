@@ -1,7 +1,7 @@
 ---    
 layout: post    
 title:  "Regular expression: All you need to know"     
-date:   2015-05-24 18:21  
+date:   "2015-05-24 18:21"
 categories: regular expression, ruby  
 comments: true  
 tags: [regex, ruby]

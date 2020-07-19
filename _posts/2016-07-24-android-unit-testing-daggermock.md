@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Android单元测试(十)：DaggerMock：The Power of Dagger2, The Ease of Mockito'
-date: 2016-07-24T14:35:47+08:00
+date: "2016-07-24T14:35:47+08:00"
 comments: true
 post_id: android-unit-testing-daggermock
 ---

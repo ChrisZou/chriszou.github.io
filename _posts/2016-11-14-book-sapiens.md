@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '人类简史'
-date: 2016-11-14T20:19:30+08:00
+date: "2016-11-14T20:19:30+08:00"
 comments: true
 post_id: book sapiens
 ---

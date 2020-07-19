@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Android单元测试（二）：再来谈谈为什么'
-date: 2016-04-16T18:57:27+08:00
+date: "2016-04-16T18:57:27+08:00"
 comments: true
 post_id: android-unit-testing-about-why
 ---

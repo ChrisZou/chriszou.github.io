@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Elm语言初体验"
-date: 2016-11-13T23:24:02+08:00
+date: "2016-11-13T23:24:02+08:00"
 comments: true
 post_id: a-glimpse-of-elm
 ---

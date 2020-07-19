@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 什么叫代码的可读性？为什么说Kotlin的可读性比Java高？
-date: 2017-12-10T17:20:22+08:00
+date: "2017-12-10T17:20:22+08:00"
 comments: true
 post_id: what-is-readability
 ---

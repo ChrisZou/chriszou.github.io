@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Java 8的Lambda及其在Android 开发中的应用
-date:   2015-03-17 13:51:09 UTC
+date:   "2015-03-17 13:51:09 UTC"
 tags: [tech, java, android]
 comments: true
 ---

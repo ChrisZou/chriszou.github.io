@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '命名是件大事情'
-date: 2016-03-10T08:56:04+08:00
+date: "2016-03-10T08:56:04+08:00"
 comments: true
 post_id: naming-is-no-little-thing
 ---

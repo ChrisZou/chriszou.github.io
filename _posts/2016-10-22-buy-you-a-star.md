@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '买颗星星送给你'
-date: 2016-10-22T16:09:09+08:00
+date: "2016-10-22T16:09:09+08:00"
 comments: true
 post_id: buy-you-a-star
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  如何学习一样东西
-date:   2015-01-02 21:56:57 UTC
+date:   "2015-01-02 21:56:57 UTC"
 tags: [learn]
 comments: true
 ---

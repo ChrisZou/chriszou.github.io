@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Android单元测试（七）：Robolectric，在JVM上调用安卓的类'
-date: 2016-06-05T14:08:14+08:00
+date: "2016-06-05T14:08:14+08:00"
 comments: true
 post_id: robolectric-android-on-jvm
 ---

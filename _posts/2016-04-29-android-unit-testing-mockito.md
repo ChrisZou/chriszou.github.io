@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Android单元测试（四）：Mock以及Mockito的使用'
-date: 2016-04-29T07:30:49+08:00
+date: "2016-04-29T07:30:49+08:00"
 comments: true
 post_id: android-unit-testing-mock-and-mockito
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  1分钟学会Markdown
-date:   2015-03-08 12:40:29 UTC
+date:   "2015-03-08 12:40:29 UTC"
 comments: true
 tags: [tech, markdown]
 ---

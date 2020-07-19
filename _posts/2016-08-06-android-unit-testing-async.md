@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '安卓单元测试(十一)：异步代码怎么测试'
-date: 2016-08-06T16:50:02+08:00
+date: "2016-08-06T16:50:02+08:00"
 comments: true
 post_id: android-unit-testing-async
 ---

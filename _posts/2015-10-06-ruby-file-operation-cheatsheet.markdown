@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ruby 文件操作 Cheatsheet"
-date:   2015-10-06 15:51
+date:   "2015-10-06 15:51"
 tags: [tech, ruby]
 comments: true
 ---

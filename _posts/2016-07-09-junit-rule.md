@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '安卓单元测试(八)：Junit Rule的使用'
-date: 2016-07-09T13:56:51+08:00
+date: "2016-07-09T13:56:51+08:00"
 comments: true
 post_id: junit-rule
 ---

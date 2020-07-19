@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '标准GNU命令行的格式'
-date: 2016-10-01T14:46:53+08:00
+date: "2016-10-01T14:46:53+08:00"
 comments: true
 post_id: gnu-command-line-structure
 ---

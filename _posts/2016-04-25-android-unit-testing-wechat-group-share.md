@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Android单元测试在蘑菇街支付金融部门的实践'
-date: 2016-04-25T16:32:09+08:00
+date: "2016-04-25T16:32:09+08:00"
 comments: true
 post_id: android-unit-testing-wechat-group-share
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Life is short
-date: 2016-02-27T07:43:38+08:00
+date: "2016-02-27T07:43:38+08:00"
 comments: true
 post_id: life-is-short
 ---

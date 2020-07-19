@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '民主和文明，需要我们自己去争取'
-date: 2016-02-20T16:54:22+08:00
+date: "2016-02-20T16:54:22+08:00"
 comments: true
 post_id: democracy-is-owned-instead-of-given
 ---

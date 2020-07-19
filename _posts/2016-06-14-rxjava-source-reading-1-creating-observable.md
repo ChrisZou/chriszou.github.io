@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'RxJava源码分析（一）：Observable的几种创建方式'
-date: 2016-06-14T08:36:47+08:00
+date: "2016-06-14T08:36:47+08:00"
 comments: true
 post_id: rxjava-source-reading-1-creating-observable
 ---

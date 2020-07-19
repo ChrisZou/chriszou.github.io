@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rails Authentication From Scratch
-date: 2016-09-15T17:53:02+08:00
+date: "2016-09-15T17:53:02+08:00"
 comments: true
 post_id: rails-authentication-from-scratch
 ---

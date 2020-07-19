@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Nginx with Unicorn to serve your rails app
-date: 2015-12-19T12:23:59+08:00
+date: "2015-12-19T12:23:59+08:00"
 comments: true
 ---
 This is currently the most popular solution to serve rails app and is used by many big companies like github, tweet, 37signals and so on. Also, it is very easy to setup in this way.

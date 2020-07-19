@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Android单元测试（六）：使用dagger2来做依赖注入，以及在单元测试中的应用'
-date: 2016-05-10T06:39:41+08:00
+date: "2016-05-10T06:39:41+08:00"
 comments: true
 post_id: android-unit-testing-di-dagger
 ---

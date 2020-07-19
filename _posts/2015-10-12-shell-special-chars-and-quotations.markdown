@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Shell命令行中的特殊字符及其转义(去除特殊含义)"
-date: 2015-10-12
+date: "2015-10-12"
 tags: [tech, linux, shell]
 comments: 'duoshuo'
 ---

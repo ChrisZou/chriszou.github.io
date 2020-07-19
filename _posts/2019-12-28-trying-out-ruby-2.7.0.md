@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ruby 2.7.0 上手体验以及问题记录
-date: 2019-12-28T14:40:34+08:00
+date: "2019-12-28T14:40:34+08:00"
 comments: true
 post_id: trying-out-ruby-2.7.0
 ---

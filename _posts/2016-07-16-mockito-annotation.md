@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '安卓单元测试（九）：使用Mockito Annotation快速创建Mock'
-date: 2016-07-16T13:22:13+08:00
+date: "2016-07-16T13:22:13+08:00"
 comments: true
 post_id: mockito-annotation
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Android单元测试（五）：依赖注入，将mock方便的用起来"
-date: 2016-05-06T07:18:12+08:00
+date: "2016-05-06T07:18:12+08:00"
 comments: true
 post_id: android-unit-testing-di
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  在Rails app中使用Bootstrap
-date: 2015-04-05 16:01:31 UTC
+date: "2015-04-05 16:01:31 UTC"
 tags: [tech, rails]
 comments: true
 ---
