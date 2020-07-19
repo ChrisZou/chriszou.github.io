@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Ruby 文件操作 Cheatsheet"
-tags: [tech, ruby]
 date:   2015-10-06 15:51
+tags: [tech, ruby]
 comments: true
 ---
 每次都要查，真是蛋疼，不如一次性总结一下，以后再不记得就来这里找好了。  

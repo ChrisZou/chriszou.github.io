@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  在Rails app中使用Bootstrap
+date: 2015-04-05 16:01:31 UTC
 tags: [tech, rails]
-date:   2015-04-05 16:01:31 UTC
 comments: true
 ---
 这篇文章基本上算是对[railscast 328: Twitter Bootstrap Basics](http://railscasts.com/episodes/328-twitter-bootstrap-basics) 的一个学习总结。提供一个step-by-step的guide。同时也加入了一些需要注意的地方，比如说这个video cast是2012年做的，到现在为止无论是rails还是bootstrap都变了很多，在rails里面使用bootstrap的方法也有所不同。  

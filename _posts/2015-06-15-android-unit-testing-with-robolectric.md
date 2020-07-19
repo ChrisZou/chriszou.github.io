@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 用Robolectric来做Android unit testing      
-tags: [tech, java, android, testing]
 date: 2015-06-15T05:52:42+08:00
+tags: [tech, java, android, testing]
 comments: true
 ---
 

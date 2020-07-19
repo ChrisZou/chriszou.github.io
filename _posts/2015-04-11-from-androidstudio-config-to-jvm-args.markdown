@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  从AndroidStudio的启动参数开始，了解一下JVM的一些东西（内存使用，JIT等）
+date: 2015-04-11 06:15:07 UTC
 tags: [tech, java, android]
-date:   2015-04-11 06:15:07 UTC
 comments: true
 ---
 如果你使用AndroidStudio经常觉得很卡，那有可能是因为系统给AS分配的内存不够的原因。打开/Applications/Android Studio.app/Contents/bin/studio.vmoptions (Mac)，可以看到有以下配置：
